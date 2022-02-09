@@ -3,8 +3,13 @@ Rebuild an earlier project from the ground up. Sharpen up on my Express and Mong
 
 # Technologies
 Javascript
+
 HTML / EJS
+
 CSS
+
 MongoDB
+
 Mongoose
+
 PassportJS
