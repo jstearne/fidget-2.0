@@ -7,7 +7,7 @@ const indexRouter = require('./routes/index');
 
 
 const app = express();
-
+require('./models/index');
 
 // Configure the app (app.set...ejs)
 app.set('view engine', 'ejs');
@@ -26,5 +26,5 @@ app.get('/home', function(req, res) {
 
 // Tell the app to listen on port 3000
 app.listen(PORT, () => {
-    console.log(`Express is running. To see this website, visit: \nlocalhost:${PORT}/ `);
+    console.log(`Express is running. To see this website, visit: \nlocalhost:${PORT} `);
 });
