@@ -1,6 +1,10 @@
 require('dotenv').config();
 // Require modules
 const express = require('express');
+
+// connect to the database with Mongoose
+require('./config/database');
+
 const morgan = require('morgan');
 const PORT = process.env.PORT || 3000;
 const indexRouter = require('./routes/index');
@@ -16,6 +20,7 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
+// proper way of mounting routes 
 app.use('/', indexRouter);
 
 // home route
