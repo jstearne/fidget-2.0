@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/movies', {
+mongoose.connect('mongodb://localhost/fidget', {
         useNewUrlParser: true, 
         useUnifiedTopology: true 
 });
