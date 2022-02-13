@@ -1,6 +1,7 @@
 <%- include('partials/header.ejs') %>
 
 
+
 <body>
     <h1>I'm using a partial to render this!!</h1>
 
@@ -8,7 +9,11 @@
 
 
 
-
+    <% if (user) { %>
+        <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+    <% } else { %>
+        <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+    <% } %>
 
 
 

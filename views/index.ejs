@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+</head>
+<body>
+    THIS IS THE LOGIN SCREEN
+
+    <li>
+                
+        <a href="/posts">Main Page</a>
+        
+</li>
+<li>
+    <% if (user) { %>
+        <a href="/user">My Profile</a>
+        <% } %>
+</li>
+<li>
+    <% if (user) { %>
+        <a href="posts/new">Make a Post</a>
+        <% } %>
+</li>
+
+</ul>
+   
+<h1>Welcome to Fidget 2.0!</h1>
+<h2>The side bar of the internet!</h2>
+<div id="nav">
+<% if (user) { %><br><br><br><br>
+<p>Welcome back <%= user.name %>!</p><br>
+<% } else { %><br><br><br><br>
+<a href="/auth/google" id="asklog">Click here to view and create posts!</a>
+<% } %>
+</div>
+</html>

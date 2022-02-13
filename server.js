@@ -1,9 +1,12 @@
+// This is the order I should generally always use
 require('dotenv').config();
+
 // Require modules
 const express = require('express');
 
-// connect to the database with Mongoose
+// connect to the database with Mongoose, passport for auth
 require('./config/database');
+require('./config/passport');
 
 // always in this order for the const variables
 const morgan = require('morgan');
@@ -11,10 +14,12 @@ const session = require('express-session'); // always below morgan
 const passport = require('passport'); // always below session
 const PORT = process.env.PORT || 3000;
 
+// routes
 const indexRouter = require('./routes/index');
 
-
 const app = express();
+
+// models for data
 require('./models/index');
 
 // Configure the app (app.set...ejs)

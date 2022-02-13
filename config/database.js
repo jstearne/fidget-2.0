@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/fidget', {
+// points to variables defined by .env OR uses local mongosh
+mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/fidget', {
         useNewUrlParser: true, 
         useUnifiedTopology: true 
 });

@@ -1,8 +1,14 @@
-// inside of controllers/index.js
+const User = require('../models/user');
+
 module.exports = {
-    index
+    index,
 }
 
-function index(req, res) {
-    res.render('home');
+function index(req, res, next) {
+    User.find({}, function(err, users) {
+      res.render('/', { 
+        users, 
+        user: req.user 
+        });
+    }); // this should render /home with user, req.user data
 }
