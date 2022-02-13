@@ -5,34 +5,38 @@
 
 <body>
     THIS IS THE LOGIN SCREEN
-
-    <li>
-                
+<ul>
+    <li>    
         <a href="/posts">Main Page</a>
         
-</li>
-<li>
-    <% if (user) { %>
-        <a href="/user">My Profile</a>
-        <% } %>
-</li>
-<li>
-    <% if (user) { %>
-        <a href="posts/new">Make a Post</a>
-        <% } %>
-</li>
-
+    </li>
+    <li>
+        <% if (user) { %>
+            <a href="/user">My Profile</a>
+            <% } %>
+    </li>
+    <li>
+        <% if (user) { %>
+            <a href="posts/new">Make a Post</a>
+            <% } %>
+    </li>
 </ul>
    
 <h1>Welcome to Fidget 2.0!</h1>
 <h2>The side bar of the internet!</h2>
 <div id="nav">
 <% if (user) { %><br><br><br><br>
-<p>Welcome back <%= user.name %>!</p><br>
+<p>Welcome back <%= user.name %>!</p><br> <!--THIS WORKS!-->
 <% } else { %><br><br><br><br>
 <a href="/auth/google" id="asklog">Click here to view and create posts!</a>
 <% } %>
 </div>
+<br>
+<% if (user) { %>
+    <a href="/logout">Log Out</a>
+    <% } else { %>
+    <a href="/auth/google">Login with Google</a>
+    <% } %>
 </html>
 
 <%- include('partials/footer.ejs') %>

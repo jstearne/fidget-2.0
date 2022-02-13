@@ -3,32 +3,30 @@ const passport = require('passport');
 const indexCtrl = require('../controllers/index');
 
 
-// router.get('/', indexCtrl.index);
-router.get('/', function(req, res) {
+// router.get('/', indexCtrl.index); OBSOLETE for now
+router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
         user: req.user
     });
 });
-  
-
 
 router.get(
     "/auth/google",
     passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-// Google OAuth callback route
-router.get(
+// Google OAuth callback route - working properly!
+router.get( 
     "/oauth2callback",
     passport.authenticate("google", {
-      successRedirect: "/home",
-      failureRedirect: "/",
+      successRedirect: "/", // this was the code problem. Redirect will go to Posts
+      failureRedirect: "/", // splash page for non-logged-in users
     })
 );
-// OAuth logout route
+// OAuth logout route - working properly!
 router.get("/logout", function (req, res) {
     req.logout();
-    res.redirect("/"); // need to define this view
+    res.redirect("/"); 
 });
 
 module.exports = router;
