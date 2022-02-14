@@ -3,38 +3,42 @@
 </head>
 
 <body>
-    <ul>
-        <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></a></li>
-        <li>
-            <a href="/posts">Main</a>
-        </li>
-        <li>
-            <a href="/user">My Profile</a>
-        </li>
-       
-        
-    </ul>
-     
-    <h1>Welcome to Fidget!</h1>
-    <h2>The side bar of the internet!</h2>
+    <% if (user) { %>
+        <!--if user logged in, show this content-->
+        <a href="/logout">Log Out</a>
+        <h1>Welcome to Fidget!</h1>
+        <h2>The side bar of the internet!</h2>
+    
+    <form id="new-form" action="/posts" method="POST">
+        <ul class="form">
+            <li>
+                <label>Post Title:</label>
+                <input type="text" name="title">
+            </li>
+            <li>
+                <label>Post Content:</label>
+                <textarea id="post" name="content"></textarea>
+            </li>
+            <div class="container">
+                <div class="center">
+                <input type="submit" value="Post to Fidget!">
+                </div>
+        </ul>
+      </form>
 
-<form id="new-form" action="/posts" method="POST">
-    <ul class="form">
-        <li>
-            <label>Post Title:</label>
-            <input type="text" name="title">
-        </li>
-        <li>
-            <label>Post Content:</label>
-            <textarea id="post" name="content"></textarea>
-        </li>
-        <div class="container">
-            <div class="center">
-            <input type="submit" value="Post to Fidget!">
-            </div>
-    </ul>
-  </form>
-  <p><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></p>
+        <% } else { %>
+        <!--if user is NOT logged in, show this content--> 
+        <h1>Welcome to Fidget!</h1>
+        <h2>The side bar of the internet!</h2>
+
+            
+
+
+        <a href="/auth/google">Click here to sign-up or sign-in</a>
+        <% } %>
+
+
+ 
 </body>
 </html>
 

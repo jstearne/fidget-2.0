@@ -45,8 +45,7 @@ function create(req, res) {
         }  
     });
     user.posts.push(req.params.id);
-    post.author.push(req.user.name);
-    console.log(user.name);
+    post.author.push(req.user.name); // push current user name into the post object's user parameter
     user.save(function (err) {
         if (err) return res.render('/new');
         console.log('Success!');
