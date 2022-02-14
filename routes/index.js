@@ -28,7 +28,6 @@ router.get('posts/', function(req, res) { // get index for '/' route
 router.get('posts/new', function(req, res) { // get index for '/' route
     res.render('posts/new', { // render posts/index.ejs (naming is confusing), include user/post/comment data
         user: req.user,
-
     });
 });
 
