@@ -10,6 +10,14 @@ router.get('/', function(req, res) { // get index for '/' route
     });
 });
 
+// this exports "user" to the home page
+router.get('/home', function(req, res) { // get index for '/' route
+    res.render('home', {
+        user: req.user
+    });
+});
+
+
 router.get(
     "/auth/google",
     passport.authenticate("google", { scope: ["profile", "email"] })
