@@ -1,26 +1,26 @@
 // This is the order I should generally always use
 require('dotenv').config();
 
-// Require modules
+// Required modules
 const express = require('express');
+const app = express();
 
 // connect to the database with Mongoose, passport for auth
-require('./config/database');
-require('./config/passport');
+require('./config/database'); // db connect
+require('./config/passport'); // auth
+require('./models/index'); // models
 
 // always in this order for the const variables
 const morgan = require('morgan');
 const session = require('express-session'); // always below morgan
 const passport = require('passport'); // always below session
+const methodOverride = require('method-override');
+
 const PORT = process.env.PORT || 3000;
 
-// routes
+// routes shortcuts
 const indexRouter = require('./routes/index');
 
-const app = express();
-
-// models for data
-require('./models/index');
 
 // Configure the app (app.set...ejs)
 app.set('view engine', 'ejs');
@@ -43,10 +43,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const methodOverride = require('method-override');
-
 // proper way of mounting routes 
-app.use('/', indexRouter); // this goes to HOME
+app.use('/', indexRouter); // this goes to / "index"
 
 // home route: redundant!
 app.get('/home', function(req, res) {
