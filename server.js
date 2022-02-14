@@ -21,6 +21,9 @@ const PORT = process.env.PORT || 3000;
 // routes shortcuts
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');
+const commentRouter = require('./routes/comments');
+const userRouter = require('./routes/user');
+
 
 // Configure the app (app.set...ejs)
 app.set('view engine', 'ejs');
@@ -30,6 +33,7 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 // google strategy
 app.use(
@@ -45,8 +49,9 @@ app.use(passport.session());
 
 // proper way of mounting routes 
 app.use('/', indexRouter); // this goes to / "index"
-app.use('/posts/', postsRouter)
-
+app.use('/posts/', postsRouter);
+app.use('/', commentRouter);
+app.use('/', userRouter);
 // // home route: redundant!
 // app.get('/home', function(req, res) {
 //     res.render('home');
