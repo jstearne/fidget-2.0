@@ -8,15 +8,19 @@ const indexCtrl = require('../controllers/index');
 // this exports "user" to the '/' index
 router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
-        user: req.user
+        user: req.user,
+        posts:req.posts,
+        comments:req.comments,
     });
 });
 
 
 // this exports "user" to the posts page
-router.get('/posts', function(req, res) { // get index for '/' route
-    res.render('index', { // there is no posts.ejs, render index.
-        user: req.user
+router.get('posts/', function(req, res) { // get index for '/' route
+    res.render('posts/index', { // render posts/index.ejs (naming is confusing), include user/post/comment data
+        user: req.user,
+        posts:req.posts,
+        comments:req.comments,
     });
 });
 
