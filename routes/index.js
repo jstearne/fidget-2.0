@@ -5,7 +5,7 @@ const indexCtrl = require('../controllers/index');
 
 // router.get('/', indexCtrl.index); OBSOLETE for now
 
-// this exports "user" to the /index
+// this exports "user" to the '/' index
 router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
         user: req.user
@@ -13,8 +13,8 @@ router.get('/', function(req, res) { // get index for '/' route
 });
 
 // this exports "user" to the home page
-router.get('/home', function(req, res) { // get index for '/' route
-    res.render('home', {
+router.get('/posts', function(req, res) { // get index for '/' route
+    res.render('posts', {
         user: req.user
     });
 });

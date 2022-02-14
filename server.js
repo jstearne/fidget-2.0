@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3000;
 
 // routes shortcuts
 const indexRouter = require('./routes/index');
-
+const postsRouter = require('./routes/posts');
 
 // Configure the app (app.set...ejs)
 app.set('view engine', 'ejs');
@@ -45,11 +45,12 @@ app.use(passport.session());
 
 // proper way of mounting routes 
 app.use('/', indexRouter); // this goes to / "index"
+app.use('/posts/', postsRouter)
 
-// home route: redundant!
-app.get('/home', function(req, res) {
-    res.render('home');
-});
+// // home route: redundant!
+// app.get('/home', function(req, res) {
+//     res.render('home');
+// });
 
 
 // Tell the app to listen on port 3000
