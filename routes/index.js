@@ -15,7 +15,7 @@ router.get('/', function(req, res) { // get index for '/' route
 
 // this exports "user" to the posts page
 router.get('/posts', function(req, res) { // get index for '/' route
-    res.render('posts', {
+    res.render('index', { // there is no posts.ejs, render index.
         user: req.user
     });
 });

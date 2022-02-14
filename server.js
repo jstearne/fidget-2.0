@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3000;
 
 // routes shortcuts
 const indexRouter = require('./routes/index');
-const postsRouter = require('./routes/posts');
+const postRouter = require('./routes/posts');
 const commentRouter = require('./routes/comments');
 const userRouter = require('./routes/user');
 
@@ -49,7 +49,7 @@ app.use(passport.session());
 
 // proper way of mounting routes 
 app.use('/', indexRouter); // this goes to / "index"
-app.use('/posts/', postsRouter);
+app.use('/posts', postRouter);
 app.use('/', commentRouter);
 app.use('/', userRouter);
 // // home route: redundant!

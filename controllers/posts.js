@@ -1,7 +1,7 @@
 const Post = require('../models/post');
 const User = require('../models/user');
 
-
+// post index is posts/
 module.exports = {
   index,
   show,
@@ -13,7 +13,7 @@ module.exports = {
 
 function index(req, res) {
     Post.find({}, function(err, posts, user) { // find all posts, and render with posts, user objects
-        res.render('posts/', { title: 'All Posts', posts, user: req.user });
+        res.render('posts', { title: 'All Posts', posts, user: req.user }); // /posts or errors
     });
 };
 
