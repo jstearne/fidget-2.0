@@ -19,7 +19,7 @@ function index(req, res) {
 
 // go to new post page (doesn't CREATE a post! That's for the form)
 function newPost(req, res) {
-    res.render('/posts/new');
+    res.render('posts/new');
 };
 
 // show post details page
