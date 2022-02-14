@@ -4,6 +4,8 @@ const indexCtrl = require('../controllers/index');
 
 
 // router.get('/', indexCtrl.index); OBSOLETE for now
+
+// this exports "user" to the /index
 router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
         user: req.user
