@@ -45,6 +45,8 @@ function create(req, res) {
         }  
     });
     user.posts.push(req.params.id);
+    post.author.push(req.user.name);
+    console.log(user.name);
     user.save(function (err) {
         if (err) return res.render('/new');
         console.log('Success!');

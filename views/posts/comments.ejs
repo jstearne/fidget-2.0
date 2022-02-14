@@ -29,6 +29,9 @@ COMMENT.EJS PAGE = POST DETAIL
         <li>
             <p>USER OBJECT: <%= user %> </p>
         </li>
+        <li>
+            <p>USER OBJECT: <%= post.author %> </p> <!-- post.author is the correct EJS string, now that name is pushing to post! -->
+        </li>
     </ul>
 
     <h1>Welcome to Fidget!</h1>
@@ -41,10 +44,12 @@ COMMENT.EJS PAGE = POST DETAIL
         </thead>
         <tbody>
         
-              <tr>
-                  <td><%= post.title %></td>                  
-              </tr>
-           
+            <tr>
+                <td><%= post.title %></td>                  
+            </tr>
+            <tr>
+                <td><%= post.author %></td>                  
+            </tr>
         </tbody>
         <table>
             <thead>
