@@ -1,4 +1,3 @@
-// This is the order I should generally always use
 require('dotenv').config();
 
 // Required modules
