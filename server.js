@@ -8,7 +8,8 @@ const app = express();
 // connect to the database with Mongoose, passport for auth
 require('./config/database'); // db connect
 require('./config/passport'); // auth
-require('./models/index'); // models
+require('./models/post'); // models
+require('./models/user'); // models
 
 // always in this order for the const variables
 const morgan = require('morgan');
@@ -20,7 +21,7 @@ const PORT = process.env.PORT || 3000;
 
 // routes shortcuts
 const indexRouter = require('./routes/index');
-const postsRouter = require('./routes/posts');
+const postRouter = require('./routes/posts');
 const commentRouter = require('./routes/comments');
 const userRouter = require('./routes/user');
 
@@ -49,7 +50,7 @@ app.use(passport.session());
 
 // proper way of mounting routes 
 app.use('/', indexRouter); // this goes to / "index"
-app.use('/posts/', postsRouter);
+app.use('/posts', postRouter);
 app.use('/', commentRouter);
 app.use('/', userRouter);
 // // home route: redundant!

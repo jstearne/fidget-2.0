@@ -8,15 +8,19 @@ const indexCtrl = require('../controllers/index');
 // this exports "user" to the '/' index
 router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
-        user: req.user
+        user: req.user,
+        posts:req.posts,
+        comments:req.comments,
     });
 });
 
 
 // this exports "user" to the posts page
-router.get('/posts', function(req, res) { // get index for '/' route
-    res.render('posts', {
-        user: req.user
+router.get('posts/', function(req, res) { // get index for '/' route
+    res.render('posts/index', { // render posts/index.ejs (naming is confusing), include user/post/comment data
+        user: req.user,
+        posts:req.posts,
+        comments:req.comments,
     });
 });
 
@@ -45,7 +49,7 @@ router.get(
 router.get( 
     "/oauth2callback",
     passport.authenticate("google", {
-      successRedirect: "/", // this was the code problem. Redirect will go to Posts
+      successRedirect: "/posts", // this was the code problem. Redirect will go to Posts
       failureRedirect: "/", // splash page for non-logged-in users
     })
 );
