@@ -32,9 +32,35 @@
             </ul>
         </nav>
         
+<!--Doesnt work?-->
+<table>
+    <thead>
+        <th>Posts</th>
+        
+    </thead>
+    <tbody>
+        <% user.posts.forEach(function(post){ %>
+          <tr>
+            <td><%= post.title %>
+                <% if (user) { %>
+              <a href='/posts/<%= post._id %>'>See More!</a>
+              <% } %>
+                
+            </td>
+          </tr>
+          
+        <% }) %>
+    </tbody>
+</table>
+<!--Doesnt work?-->
+
+
+
         <h1>Fidget User Page</h1>
         <h2> <%= user.name %> </h2>
 
+
+        <p>This user has made <%= user.posts.length %> posts! </p>
         <% if (user.posts.length) { %>
             <table>
                 <thead>
@@ -51,10 +77,10 @@
                 </tbody>
             </table>
        <% } else { %>
+
         <h4>No Posts Yet!</h4>
        <% } %>
 
-        <br><br>
-       <img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner"  /></a>
+      
     </body>
 </html>
