@@ -6,7 +6,7 @@ const commentSchema = new Schema({
     content: { type: String, required: true },
     date: Date,
     author: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.String,
         ref: 'User'
       }],
     }, {
@@ -20,7 +20,7 @@ const postSchema = new mongoose.Schema({
     content: { type: String, required: true },
     date: Date,
     author: [{
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.String,
       ref: 'User'
     }],
     comments: [commentSchema],

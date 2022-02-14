@@ -19,7 +19,7 @@ function index(req, res) {
 };
 
 // this exports "user" to the posts/new page
-function newPost(req, res) { // get index for '/' route
+function newPost(req, res) {
     res.render('posts/new', { // pass user object to the posts/new page
         user: req.user,
     });
