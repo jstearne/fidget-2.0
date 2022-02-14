@@ -5,20 +5,36 @@ const indexCtrl = require('../controllers/index');
 
 // router.get('/', indexCtrl.index); OBSOLETE for now
 
-// this exports "user" to the /index
+// this exports "user" to the '/' index
 router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
         user: req.user
     });
 });
 
-// this exports "user" to the home page
-router.get('/home', function(req, res) { // get index for '/' route
-    res.render('home', {
+
+// this exports "user" to the posts page
+router.get('/posts', function(req, res) { // get index for '/' route
+    res.render('posts', {
         user: req.user
     });
 });
 
+// without quotes AND batticks it crashes?
+router.get('`/posts/${post._id}`', (req, res) => {
+    res.render('comments', {
+        user:req.user,
+        comments:req.comments,
+    });
+});
+
+// profile page "user"
+router.get('/user', (req, res) => {
+    res.render('user', {
+        user:req.user,
+        posts:req.posts,
+    });
+});
 
 router.get(
     "/auth/google",

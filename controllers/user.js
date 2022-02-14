@@ -11,5 +11,5 @@ function getUserWithPosts(name){
   return User.findOne({ name: name })
     .populate('posts').exec((err, posts) => {
       console.log("Populated User " + posts);
-    })
+    });
 }
