@@ -13,13 +13,16 @@ module.exports = {
 
 function index(req, res) {
     Post.find({}, function(err, posts, user) { // find all posts, and render with posts, user objects
-        res.render('posts', { title: 'All Posts', posts, user: req.user }); // /posts or errors
+        res.render('posts', { 
+            title: 'All Posts', posts, user: req.user }); // /posts or errors
     });
 };
 
-// go to new post page (doesn't CREATE a post! That's for the form)
-function newPost(req, res) {
-    res.render('posts/new');
+// this exports "user" to the posts/new page
+function newPost(req, res) { // get index for '/' route
+    res.render('posts/new', { // pass user object to the posts/new page
+        user: req.user,
+    });
 };
 
 // show post details page

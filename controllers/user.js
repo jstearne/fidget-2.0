@@ -12,4 +12,4 @@ function getUserWithPosts(name){
     .populate('posts').exec((err, posts) => {
       console.log("Populated User " + posts);
     });
-}
+} 

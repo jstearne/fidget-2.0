@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto+Mono:wght@100&family=Teko:wght@300&display=swap" rel="stylesheet"> 
-
+<%- include('partials/header.ejs') %>
     </head>
     <body>
         <nav>
@@ -31,33 +19,10 @@
                 </li>
             </ul>
         </nav>
-        
-<!--Doesnt work?-->
-<table>
-    <thead>
-        <th>Posts</th>
-        
-    </thead>
-    <tbody>
-        <% user.posts.forEach(function(post){ %>
-          <tr>
-            <td><%= post.title %>
-                <% if (user) { %>
-              <a href='/posts/<%= post._id %>'>See More!</a>
-              <% } %>
-                
-            </td>
-          </tr>
-          
-        <% }) %>
-    </tbody>
-</table>
-<!--Doesnt work?-->
-
-
+ 
 
         <h1>Fidget User Page</h1>
-        <h2> <%= user.name %> </h2>
+        <h2> <%= user.name %> </h2> <!-- Shows logged in user's name -->
 
 
         <p>This user has made <%= user.posts.length %> posts! </p>
@@ -84,3 +49,5 @@
       
     </body>
 </html>
+
+<%- include('partials/footer.ejs') %>

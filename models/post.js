@@ -3,20 +3,26 @@ const Schema = mongoose.Schema;
 
 // comments are subdocuments
 const commentSchema = new Schema({
-    content: String,
+    content: { type: String, required: true },
     date: Date,
-}, {
+    author: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+      }],
+    }, {
     timestamps: true,
 });
 
 
+
 const postSchema = new mongoose.Schema({
-    title: String,
-    content: String, 
-    author: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-      },
+    title: { type: String, required: true },
+    content: { type: String, required: true },
+    date: Date,
+    author: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    }],
     comments: [commentSchema],
 }, {
     timestamps: true,

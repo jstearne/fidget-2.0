@@ -1,3 +1,4 @@
+<%- include('../partials/header.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
     <title>Create a Comment</title>
 </head>
         
@@ -27,8 +28,7 @@ COMMENT.EJS PAGE = POST DETAIL
 
     <h1>Welcome to Fidget!</h1>
     <h2>The side bar of the internet!</h2>
-    
-    Author: <td><%= post.title.user %></td>
+
     <table>
         <thead>
             <th>Post</th>
@@ -51,6 +51,7 @@ COMMENT.EJS PAGE = POST DETAIL
                   <tr>
                       
                       <td><%= post.content %></td>
+                      <td><%= post.date %></td>
                       
                   </tr>
                
@@ -116,3 +117,5 @@ COMMENT.EJS PAGE = POST DETAIL
     
 </body>
 </html>
+
+<%- include('../partials/footer.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
