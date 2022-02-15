@@ -20,8 +20,9 @@ function index(req, res) {
 
 // this exports "user" to the posts/new page
 function newPost(req, res) {
-    res.render('posts/new', { // pass user object to the posts/new page
-        user: req.user,
+    Post.find({}, function(err, posts, user) { // find all posts, and render with posts, user objects
+        res.render('posts/new', { 
+            title: 'All Posts', posts, user: req.user }); // /posts or errors
     });
 };
 

@@ -3,6 +3,26 @@
 h1 {
     color: green;
 }
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* TWO PANE NEW.EJS LAYOUT */
+.row {
+    box-sizing: border-box;
+
+  }
+.column-60 {
+    width: 60%;
+    float: left;
+}
+.column-30 {
+    width: 40%;
+    float: right;
+}
+
+
 
 
 /* FORM BOXES */
@@ -12,15 +32,28 @@ h1 {
 .post-form-container {
     background-color: aqua;
     box-shadow:0 0 15px 4px rgba(0,0,0,1);
+    width: 90%;
+}
+.post-field {
 
+    padding:10px;
+    border-radius:10px;
 }
 input {
-    width: 25%;
+    width: 90%;
+    padding:10px;
+    border-radius:10px;
 }
 .submit-button-container {
     background-color: black;
+    padding: 20px;
 }
-
+textarea {
+    height: 50%;
+    width: 90%;
+    padding:10px;
+    border-radius:10px;
+}
 
 /* always at bottom */
 footer {

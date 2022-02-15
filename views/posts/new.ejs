@@ -30,6 +30,24 @@
         </ul>
       </form>
  
+
+      <table>
+        <thead>
+            <th>Posts</th>
+        </thead>
+        <tbody>
+            <% posts.forEach(function(post){ %>
+              <tr>
+                <td><%= post.title %>
+                    <a href='/posts/<%= post._id %>'>See More!</a>
+                </td>
+              </tr>
+              
+            <% }) %>
+        </tbody>
+    </table>
+
+
 </body>
 </html>
 
