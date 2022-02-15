@@ -11,7 +11,6 @@ passport.use(
         },
         function (accessToken, refreshToken, profile, cb) {
             User.findOne({ googleID: profile.id }, function (err, user) {
-                console.log(err);
                 if (err) return cb(err);
                 if (user) {
                     return cb(null, user);
