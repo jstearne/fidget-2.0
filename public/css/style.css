@@ -5,8 +5,21 @@ h1 {
 }
 
 
+/* FORM BOXES */
+* {
+    box-sizing: border-box;
+}
+.post-form-container {
+    background-color: aqua;
+    box-shadow:0 0 15px 4px rgba(0,0,0,1);
 
-
+}
+input {
+    width: 25%;
+}
+.submit-button-container {
+    background-color: black;
+}
 
 
 /* always at bottom */

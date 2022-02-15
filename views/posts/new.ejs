@@ -8,7 +8,7 @@
         <h2>The side bar of the internet!</h2>
     
     <form id="new-form" action="/posts" method="POST">
-        <ul class="form">
+        <ul class="post-form-container">
             <li>
                 <label>Pseudonym:</label>
                 <input type="text" name="author">
@@ -21,9 +21,11 @@
                 <label>Post Content:</label>
                 <textarea id="post" name="content"></textarea>
             </li>
-            <div class="container">
+            <div class="submit-button-container">
                 <div class="center">
-                <input type="submit" value="Post to Fidget!">
+                    <input type="submit" value="Post to Fidget!">
+                    <button><a href="/posts">Cancel</a></button>>
+                </div>  
             </div>
         </ul>
       </form>
