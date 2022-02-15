@@ -10,9 +10,15 @@
     <title>EJS PARTIAL HEADER</title>
 </head>
 <nav> 
-<% if (user) { %>
-    <a href="/logout">Log Out</a>
-<% } else { %>
-    <a href="/auth/google">Login with Google</a>
-<% } %>
+    <ul>
+        <li>    
+            <a href="/posts">See all Posts</a>
+        </li>
+        <li>
+            <a href="posts/new">Make a Post</a>
+        </li>
+        <li>
+            <a href="/">Return Home</a>
+        </li>
+    </ul>
 </nav>

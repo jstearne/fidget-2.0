@@ -1,10 +1,25 @@
+/* HEADER CARRIES CSS/JS IMPORT */
+
 h1 {
     color: green;
 }
 
 
+/* FORM BOXES */
+* {
+    box-sizing: border-box;
+}
+.post-form-container {
+    background-color: aqua;
+    box-shadow:0 0 15px 4px rgba(0,0,0,1);
 
-
+}
+input {
+    width: 25%;
+}
+.submit-button-container {
+    background-color: black;
+}
 
 
 /* always at bottom */
@@ -14,4 +29,28 @@ footer {
     width: 100%;
     text-align: center;
     background-color: aqua;
+}
+
+/* CUSTOM SCROLLBAR */
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px darkblue; 
+    border-radius: 10px;
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: blue; 
+    border-radius: 10px;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darkblue; 
 }

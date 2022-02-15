@@ -3,14 +3,16 @@
 </head>
 
 <body>
-    <% if (user) { %>
-        <!--if user logged in, show this content-->
-        <a href="/logout">Log Out</a>
+
         <h1>Welcome to Fidget!</h1>
         <h2>The side bar of the internet!</h2>
     
     <form id="new-form" action="/posts" method="POST">
-        <ul class="form">
+        <ul class="post-form-container">
+            <li>
+                <label>Pseudonym:</label>
+                <input type="text" name="author">
+            </li>
             <li>
                 <label>Post Title:</label>
                 <input type="text" name="title">
@@ -19,25 +21,14 @@
                 <label>Post Content:</label>
                 <textarea id="post" name="content"></textarea>
             </li>
-            <div class="container">
+            <div class="submit-button-container">
                 <div class="center">
-                <input type="submit" value="Post to Fidget!">
-                </div>
+                    <input type="submit" value="Post to Fidget!">
+                    <button><a href="/posts">Cancel</a></button>>
+                </div>  
+            </div>
         </ul>
       </form>
-
-        <% } else { %>
-        <!--if user is NOT logged in, show this content--> 
-        <h1>Welcome to Fidget!</h1>
-        <h2>The side bar of the internet!</h2>
-
-            
-
-
-        <a href="/auth/google">Click here to sign-up or sign-in</a>
-        <% } %>
-
-
  
 </body>
 </html>
