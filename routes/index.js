@@ -56,8 +56,8 @@ router.get(
 router.get( 
     "/oauth2callback",
     passport.authenticate("google", {
-      successRedirect: "/posts", // this was the code problem. Redirect will go to Posts
-      failureRedirect: "/", // splash page for non-logged-in users
+      successRedirect: "/user", 
+      failureRedirect: "/",
     })
 );
 // OAuth logout route - working properly!
