@@ -52,11 +52,11 @@ router.get(
     passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-// Google OAuth callback route - working properly!
+// Google OAuth callback route - not working in deployment
 router.get( 
     "/oauth2callback",
     passport.authenticate("google", {
-      successRedirect: "/user", 
+      successRedirect: "/", 
       failureRedirect: "/",
     })
 );
