@@ -2,37 +2,16 @@
     <title>Create a Comment</title>
 </head>
         
-COMMENT.EJS PAGE = POST DETAIL
-
-
 <body>
-
-    <ul>
-        <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></a></li>
-        <li>
-            <% if (user) { %>
-                <a href="/logout">Log Out</a>
-                <% } else { %>
-                <a href="/auth/google">Login with Google</a>
-                <% } %>
-        </li>
-        
-        <li>
-            <a href="/user">My Profile</a>
-        </li>
-        <li>
-            <a href="/posts">Return</a>
-        </li>
-        <li>
-            <p>POST OBJECT: <%= post %> </p>
-        </li>
-        <li>
-            <p>USER OBJECT: <%= user %> </p>
-        </li>
-        <li>
-            <p>USER OBJECT: <%= post.author %> </p> <!-- post.author is the correct EJS string, now that name is pushing to post! -->
-        </li>
-    </ul>
+    THIS IS THE POST DETAIL / COMMENTS.EJS PAGE
+<ul>
+    <li>    
+        <a href="/posts">Return to all Posts</a>
+    </li>
+    <li>
+        <a href="/posts/new">Make a Post</a>
+    </li>
+</ul>
 
     <h1>Welcome to Fidget!</h1>
     <h2>The side bar of the internet!</h2>

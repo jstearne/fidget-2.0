@@ -5,10 +5,7 @@ const Schema = mongoose.Schema;
 const commentSchema = new Schema({
     content: { type: String, required: true },
     date: Date,
-    author: [{
-        type: mongoose.Schema.Types.String,
-        ref: 'User'
-      }],
+    author: { type: String, default: "Anon" },
     }, {
     timestamps: true,
 });
@@ -19,12 +16,9 @@ const postSchema = new mongoose.Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
     date: Date,
-    author: [{
-      type: mongoose.Schema.Types.String,
-      ref: 'User'
-    }],
+    author: { type: String, required: true },
     comments: [commentSchema],
-}, {
+    }, {
     timestamps: true,
 });
 

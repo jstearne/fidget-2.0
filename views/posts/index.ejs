@@ -7,35 +7,9 @@
 <h1> This is the posts/index page</h1>
 <body>
 
-    <ul>
-        <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></a></li>
-        <li>
-            <% if (user) { %>
-                <a href="/logout">Log Out</a>
-                <% } else { %>
-                <a href="/auth/google">Login with Google</a>
-                <% } %>
-        </li>
-        <li>
-            <% if (user) { %>
-            <a href="/user">My Profile</a>
-            <% } %>
-
-        </li>
-        <li>
-            <% if (user) { %>
-            <a href="posts/new">Make a Post</a>
-            <% } %>
-        </li>
-    </ul>
-
     <h1>Welcome to Fidget!</h1>
     <h2>The side bar of the internet!</h2>
-    <% if (user) { %><br><br><br><br>
-        <p>Hello <%= user.name %>!</p><br>
-        <% } else { %><br><br><br><br>
-        <p>Hello Stranger</p>
-        <% } %>
+
 
     <table>
         <thead>
@@ -45,10 +19,7 @@
             <% posts.forEach(function(post){ %>
               <tr>
                 <td><%= post.title %>
-                    <% if (user) { %>
-                  <a href='/posts/<%= post._id %>'>See More!</a>
-                  <% } %>
-                    
+                    <a href='/posts/<%= post._id %>'>See More!</a>
                 </td>
               </tr>
               
