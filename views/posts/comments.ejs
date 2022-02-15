@@ -4,48 +4,24 @@
         
 <body>
     THIS IS THE POST DETAIL / COMMENTS.EJS PAGE
-<ul>
-    <li>    
-        <a href="/posts">Return to all Posts</a>
-    </li>
-    <li>
-        <a href="/posts/new">Make a Post</a>
-    </li>
-</ul>
 
     <h1>Welcome to Fidget!</h1>
     <h2>The side bar of the internet!</h2>
 
-    <table>
-        <thead>
-            <th>Post</th>
-           
-        </thead>
-        <tbody>
-        
-            <tr>
-                <td><%= post.title %></td>                  
-            </tr>
-            <tr>
-                <td><%= post.author %></td>                  
-            </tr>
-        </tbody>
-        <table>
-            <thead>
+
+        <h2>Title</h2>
+            <h3><%= post.title %></h3>                  
+
+    
+        <h2>Author</h2>
+            <td><%= post.author %></td>                
+
+
                 
-                <th>Content</th>
-            </thead>
-            <tbody>
-            
-                  <tr>
-                      
-                      <td><%= post.content %></td>
-                      <td><%= post.date %></td>
-                      
-                  </tr>
-               
-            </tbody>
-    </table>
+        <h2>Content</h2>
+            <td><%= post.content %></td>
+            <td><%= post.date %></td>
+
 
     <!-- Javascript/HTML for hiding edit button, revealing edit menu -->
     <script>
