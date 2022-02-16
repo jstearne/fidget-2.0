@@ -19,12 +19,17 @@ h3 {
     text-align: center;
     font-family: 'Shizuru', cursive;
 }
+h4 {
+    font-family: 'Khula', sans-serif;
+
+}
 p {
     font-family: Arial, Helvetica, sans-serif;
 }
 body { /* shrink to 90% vw */
     margin-left: 5%;
     margin-right: 5%;
+    min-width: 280px;
 }
 .postbox {
     color: darkblue;
@@ -34,13 +39,43 @@ body { /* shrink to 90% vw */
 
 }
 
-/* POST BOXES (each post container) */
+/* UNRESOLVED RARE BUG: can't get master-nav to align at less than 350px */
+
+/* HEADER/NAVBAR */
+/* master-nav (greater navbar) always on top */
+.master-nav { /* HEADER ALWAYS ON TOP */
+    position: sticky; 
+    position: fixed; 
+    top: 0px;
+    background-color: white;
+    min-width: 280px;
+    width: 80%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+/* HEADER HOVER 1vh from top of screen and bottom of HEADER */
+.top-space, .bottom-space {
+    height: 1vh;
+    /* see header.ejs */
+}
+
+
+/* FIDGET POST STYLING */
+/* contains all fidget elements */
+.fidget-field {
+    border: 1px solid aqua;
+    border-radius: 20px;
+    margin: 10%;
+}
+/* posts/index.ejs FIDGET ELEMENT */
 .fidget-container {
     text-align: center;
     border: 1px solid aqua;
     border-radius: 20px;
+    margin: 5%;
+    align-items: center;
 }
-/* POST BOXES (on new.ejs) */
+/* posts/new.ejs FIDGET ELEMENT */
 .fidget-container-new {
     text-align: center;
     border: 1px solid aqua;
@@ -135,15 +170,14 @@ textarea {
     text-decoration: underline;
 }
 
-
 /* Main title box */
-.title-box {
+.title-box { /* only includes fidget title and subtitle */
     text-align: center;
     border: 1px solid aqua;
     border-radius: 20px;
-    padding-top: -5vh;
-
 }
+
+
 
 
 /* always at bottom */

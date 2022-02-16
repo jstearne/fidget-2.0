@@ -1,30 +1,24 @@
 <%- include('../partials/header.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
 
 
-<br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 <body><!--Add a container to better style posts here, maybe drop the tables-->
-    <table>
-        <thead>
+
+      
             <h3>Posts</h3>
-        </thead>
-        <tbody>
+        <div class="fidget-field"> 
+
             <% posts.reverse().forEach(function(post){ %>
-              <tr>
-                <td>
                     <div class="fidget-container"><!--Wrap in a button to make it all clickable-->
-                        <%= post.title %>
-                        <br> 
+                        <h4> <%= post.title %> </h4>
                         Written by: <%= post.author %>
                         <br> 
                         Comment Total: <%= post.comments.length %>
                         <br>
                         <a href='/posts/<%= post._id %>'>See More!</a>
                     </div>
-                </td>
-              </tr>
             <% }) %>
-        </tbody>
-    </table>
+        </div>
    <!--Need a to Top button-->
    <br><br>
 
