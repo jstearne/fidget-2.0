@@ -1,5 +1,5 @@
 const Post = require('../models/post');
-const User = require('../models/user');
+// const User = require('../models/user');
 
 // post index is posts/
 module.exports = {
@@ -12,31 +12,30 @@ module.exports = {
 };
 
 function index(req, res) {
-    Post.find({}, function(err, posts, user) { // find all posts, and render with posts, user objects
+    Post.find({}, function(err, posts ) { // find all posts, and render with posts, user objects
         res.render('posts', { 
-            title: 'All Posts', posts, user: req.user }); // /posts or errors
+            title: 'All Posts', posts }); // /posts or errors
     });
 };
 
 // this exports "user" to the posts/new page
 function newPost(req, res) {
-    Post.find({}, function(err, posts, user) { // find all posts, and render with posts, user objects
+    Post.find({}, function(err, posts ) { // find all posts, and render with posts, user objects
         res.render('posts/new', { 
-            title: 'All Posts', posts, user: req.user }); // /posts or errors
+            title: 'All Posts', posts }); // /posts or errors
     });
 };
 
 // show post details page
 function show(req, res) {
-    Post.findById(req.params.id, function(err, post, user) {
-        res.render('posts/comments', { title: 'comments', post, user: req.user });
+    Post.findById(req.params.id, function(err, post ) {
+        res.render('posts/comments', { title: 'comments', post });
     });
 };
 
 // creates the post and saves it to the database
 function create(req, res) {
     const post = new Post(req.body); 
-    const user = new User;
     post.save(function(err) {
         if (err) {
         return res.render('/new');
@@ -45,12 +44,8 @@ function create(req, res) {
         res.redirect(`/posts/${post._id}`);
         }  
     });
-    user.posts.push(req.params.id);
+    posts.push(req.params.id);
     // post.author.push(req.user.name); // push current user name into the post object's user parameter
-    user.save(function (err) {
-        if (err) return res.render('/new');
-        console.log('Success!');
-    });
 };
 
 // edit an existing post by ID

@@ -8,6 +8,7 @@ router.delete('comments/:id',isLoggedIn, commentsCtrl.deleteComment);
 // delete should be obsolete
 
 function isLoggedIn(req, res, next) {
+  console.log("Logged")
     // if (req.isAuthenticated()) return next();
     // res.redirect("/auth/google");
 }

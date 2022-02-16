@@ -8,7 +8,6 @@ const indexCtrl = require('../controllers/index');
 // this exports "user" to the '/' index
 router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
-        user: req.user,
         posts:req.posts,
         comments:req.comments,
     });
@@ -33,7 +32,6 @@ router.get('posts/new', function(req, res) { // get index for '/' route
 // without quotes AND batticks it crashes?
 router.get('`/posts/${post._id}`', (req, res) => {
     res.render('comments', {
-        user:req.user,
         comments:req.comments,
     });
 });

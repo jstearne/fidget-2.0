@@ -8,7 +8,7 @@ const app = express();
 require('./config/database'); // db connect
 // require('./config/passport'); // auth
 require('./models/post'); // models
-require('./models/user'); // models
+// require('./models/user'); // models
 
 // always in this order for the const variables
 const morgan = require('morgan');
@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 3000;
 const indexRouter = require('./routes/index');
 const postRouter = require('./routes/posts');
 const commentRouter = require('./routes/comments');
-const userRouter = require('./routes/user');
+// const userRouter = require('./routes/user');
 
 
 // Configure the app (app.set...ejs)
@@ -55,7 +55,7 @@ app.use(passport.session());
 app.use('/', indexRouter); // this goes to / "index"
 app.use('/posts', postRouter);
 app.use('/', commentRouter);
-app.use('/', userRouter);
+// app.use('/', userRouter);
 // // home route: redundant!
 // app.get('/home', function(req, res) {
 //     res.render('home');
