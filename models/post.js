@@ -12,7 +12,7 @@ const commentSchema = new Schema({
 
 
 
-const postSchema = new mongoose.Schema({
+const postSchema = new Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
     date: Date,
@@ -22,6 +22,5 @@ const postSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-const Post = mongoose.model('Post', postSchema)
 
-module.exports = Post;
+module.exports = mongoose.model('Post', postSchema);

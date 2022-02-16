@@ -2,14 +2,11 @@ const express = require("express");
 const router = express.Router();
 const commentsCtrl = require('../controllers/comments');
 
-router.get('/posts/:id/comments', isLoggedIn, commentsCtrl.index)
-router.post('/posts/:id/comments',isLoggedIn, commentsCtrl.create);
-router.delete('comments/:id',isLoggedIn, commentsCtrl.deleteComment);
-// delete should be obsolete
+router.post('/posts/:id/comments', commentsCtrl.create);
+router.get('/posts/:id/comments', commentsCtrl.index)
 
-function isLoggedIn(req, res, next) {
-    // if (req.isAuthenticated()) return next();
-    // res.redirect("/auth/google");
-}
+router.delete('comments/:id', commentsCtrl.deleteComment);
+
+
 
 module.exports = router;
