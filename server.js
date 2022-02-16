@@ -15,6 +15,9 @@ const morgan = require('morgan');
 const session = require('express-session'); // always below morgan
 const passport = require('passport'); // always below session
 const methodOverride = require('method-override');
+const favicon = require('serve-favicon');
+const path = require('path');
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -34,6 +37,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
 // google strategy
 app.use(

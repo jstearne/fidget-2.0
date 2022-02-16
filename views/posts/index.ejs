@@ -1,21 +1,14 @@
 <%- include('../partials/header.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
 
-    <title>Main</title>
-</head>
 
-<h1> This is the posts/index page</h1>
+
 <body>
-
-    <h1>Welcome to Fidget!</h1>
-    <h2>The side bar of the internet!</h2>
-
-
     <table>
         <thead>
-            <th>Posts</th>
+            <h3>Posts</h3>
         </thead>
         <tbody>
-            <% posts.forEach(function(post){ %>
+            <% posts.reverse().forEach(function(post){ %>
               <tr>
                 <td><%= post.title %>
                     <a href='/posts/<%= post._id %>'>See More!</a>
@@ -26,6 +19,6 @@
         </tbody>
     </table>
     <p><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></p>
-    </body>
+</body>
 
 <%- include('../partials/footer.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->

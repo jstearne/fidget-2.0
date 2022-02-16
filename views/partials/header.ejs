@@ -5,20 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="favicon.ico?v=1.1"><!--force browser to update favicon-->
     <script type="text/javascript" src="/js/script.js"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <title>EJS PARTIAL HEADER</title>
+    <title>fidget 2.0</title>
 </head>
-<nav> 
-    <ul>
-        <li>    
-            <a href="/posts">See all Posts</a>
-        </li>
-        <li>
-            <a href="posts/new">Make a Post</a>
-        </li>
-        <li>
-            <a href="/">Return Home</a>
-        </li>
-    </ul>
+
+<nav class="nav-bar"> 
+    <!--TEST BUTTON FOR CLICKING-->
+    <form action="#">
+        <input type="submit" value="TEST" class="navbar-button" />
+    </form>
+
+    <form action="/posts">
+        <input type="submit" value="All Fidgets" class="navbar-button" />
+    </form>
+
+    <form action="posts/new">
+        <input type="submit" value="Add New Fidget" class="navbar-button" />
+    </form>
+
+    <form action="/">
+        <input type="submit" value="Return to Fidget" class="navbar-button" />
+    </form>
 </nav>
+<div class="title-box">
+    <h1>f i d g e t   2.0</h1>
+    <h2>The side bar of the internet!</h2>
+</div>

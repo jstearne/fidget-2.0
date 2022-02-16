@@ -1,11 +1,37 @@
 /* HEADER CARRIES CSS/JS IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@800&family=Shizuru&display=swap');
 
-h1 {
-    color: green;
+/* FONT SETTINGS */
+h1 { /* title font */
+    color: navy;
+    text-align: center;
+    font-family: 'Khula', sans-serif;
+    text-shadow: 1px 1px 25px darkblue; 
+
 }
-body {
+h2 { /* subtitle font */
+    text-align: center;
+    font-family: 'Shizuru', cursive;
+    text-decoration: line-through;
+    margin-top: -15px;
+}
+h3 {
+    text-align: center;
+    font-family: 'Shizuru', cursive;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body { /* shrink to 90% vw */
     margin-left: 5%;
     margin-right: 5%;
+}
+.postbox {
+    color: darkblue;
+}
+.post-link {
+    color: red;
+
 }
 
 /* TWO PANE NEW.EJS LAYOUT */
@@ -33,6 +59,8 @@ body {
     background-color: aqua;
     box-shadow:0 0 15px 4px rgba(0,0,0,1);
     width: 90%;
+    padding: 20px;
+    
 }
 .post-field {
 
@@ -42,6 +70,7 @@ body {
 input {
     width: 90%;
     padding:10px;
+    margin-bottom: 5px;
     border-radius:10px;
 }
 .submit-button-container {
@@ -55,15 +84,61 @@ textarea {
     border-radius:10px;
 }
 
+/* NAVBAR CONTAINER */
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+}
+/* NAV BUTTON AREA */
+.nav-bar form {
+    width: 33%;
+
+}
+/* NAV BUTTON */
+.nav-bar input {
+    background-color: aqua;
+    color: darkblue;
+    border: 0;
+    padding: 10px;
+    width: 100%;
+}
+.nav-bar input:hover {
+    background-color: lightblue;
+    color: darkblue;
+    box-shadow: inset 0 0 10px darkblue;
+}
+.nav-bar input:active {
+    background-color: blueviolet;
+    color: darkblue;
+}
+.title-box {
+    text-align: center;
+    border: 1px solid aqua;
+    border-radius: 20px;
+    padding-top: -5vh;
+
+}
+
+
 /* always at bottom */
 footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 90%; /* whole app only takes up 90% of screen, 5% off each side */
     text-align: center;
-    background-color: aqua;
+    color: darkblue;
+    background: linear-gradient(135deg, white 20%, cyan, white 80%);
+
 }
 
+/* ABOUT FIDGET */
+.about-fidget {
+    text-align: center;
+}
+
+.about-fidget, p {
+    text-align: center;
+}
 /* CUSTOM SCROLLBAR */
 
 /* width */
