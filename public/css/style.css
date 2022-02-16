@@ -18,10 +18,11 @@ h2 { /* subtitle font */
 h3 {
     text-align: center;
     font-family: 'Shizuru', cursive;
+    font-size: xx-large;
 }
 h4 {
     font-family: 'Khula', sans-serif;
-
+    margin-bottom: 0vh;
 }
 p {
     font-family: Arial, Helvetica, sans-serif;
@@ -30,6 +31,7 @@ body { /* shrink to 90% vw */
     margin-left: 5%;
     margin-right: 5%;
     min-width: 280px;
+    background-color: white;
 }
 .postbox {
     color: darkblue;
@@ -61,19 +63,29 @@ body { /* shrink to 90% vw */
 
 
 /* FIDGET POST STYLING */
-/* contains all fidget elements */
+
+/* contains all fidget elements on posts/index.ejs */
 .fidget-field {
     border: 1px solid aqua;
     border-radius: 20px;
     margin: 10%;
+    background-image: radial-gradient(darkblue 20%, transparent 47%),
+    radial-gradient(aqua 20%, transparent 37%);
+    background-color: aliceblue;
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
+    /* Thanks: https://dev.to/clairecodes/how-to-create-a-polka-dot-background-with-css-23m0 */
 }
+
 /* posts/index.ejs FIDGET ELEMENT */
 .fidget-container {
     text-align: center;
-    border: 1px solid aqua;
+    border: 1px solid darkblue;
     border-radius: 20px;
     margin: 5%;
     align-items: center;
+    background-color: aliceblue;
+    box-shadow: inset 0px 0px 2px darkblue; 
 }
 /* posts/new.ejs FIDGET ELEMENT */
 .fidget-container-new {
@@ -147,6 +159,7 @@ textarea {
     text-align: center;
     border: 0;
     border-radius: 15px;
+    box-shadow: inset 0px 0px 2px darkblue; 
 }
 
 /* Styling the Link in the "button" */
