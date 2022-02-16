@@ -6,7 +6,7 @@ const app = express();
 
 // connect to the database with Mongoose, passport for auth
 require('./config/database'); // db connect
-require('./config/passport'); // auth
+// require('./config/passport'); // auth
 require('./models/post'); // models
 require('./models/user'); // models
 
