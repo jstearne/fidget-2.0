@@ -22,10 +22,11 @@ router.get('posts/', function(req, res) { // get index for '/' route
     });
 });
 
-// this exports "user" to the posts/new page
+// this exports "user" to the posts/new page - NOT ANYMORE, goes through header. If header doesn;t work however
 router.get('posts/new', function(req, res) { // get index for '/' route
     res.render('posts/new', { // render posts/index.ejs (naming is confusing), include user/post/comment data
-
+        posts:req.posts,
+        comments:req.comments,
     });
 });
 
