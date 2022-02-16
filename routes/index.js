@@ -18,7 +18,6 @@ router.get('/', function(req, res) { // get index for '/' route
 // this exports "user" to the posts page
 router.get('posts/', function(req, res) { // get index for '/' route
     res.render('posts/index', { // render posts/index.ejs (naming is confusing), include user/post/comment data
-        user: req.user,
         posts:req.posts,
         comments:req.comments,
     });
@@ -27,7 +26,7 @@ router.get('posts/', function(req, res) { // get index for '/' route
 // this exports "user" to the posts/new page
 router.get('posts/new', function(req, res) { // get index for '/' route
     res.render('posts/new', { // render posts/index.ejs (naming is confusing), include user/post/comment data
-        user: req.user,
+
     });
 });
 
