@@ -37,15 +37,10 @@ function show(req, res) {
 function create(req, res) {
     const post = new Post(req.body); 
     post.save(function(err) {
-        if (err) {
-        return res.render('/new');
-        } else {
+        if (err) return res.render('posts/new');
         console.log(post);
-        res.redirect(`/posts/${post._id}`);
-        }  
+        res.redirect(`/posts/${post._id}`); 
     });
-    posts.push(req.params.id);
-    // post.author.push(req.user.name); // push current user name into the post object's user parameter
 };
 
 // edit an existing post by ID

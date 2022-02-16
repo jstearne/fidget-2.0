@@ -1,5 +1,3 @@
-
-
 const Post = require('../models/post');
 
 module.exports = {
@@ -9,23 +7,35 @@ module.exports = {
     updatePost,
 };
 
+// this works fine
+// function index(req, res) {
+//     Post.find({}, function(err, post ) {
+//       res.render(`/posts/${post._id}`, { title: 'Comments', post });
+//     });
+// };
 function index(req, res) {
-    Post.find({}, function(err, comments, user) {
-      res.render(`/posts/${post._id}`, { title: 'Comments', comments, user: req.user });
+    Post.find({}, function(err, posts) {
+        res.render(`/posts/${post._id}`, {
+            posts
+        });
     });
-};
+}
 
 function create(req, res) {
     Post.findById(req.params.id, function (err, post) {
         post.comments.push(req.body);
-        post.save(function(err) {
-            res.redirect(`/posts/${post._id}`);
+        post.save(function (err) {
+            res.redirect(`/posts/${post._id}` );
+            console.log(`Your comment was: "${req.body.content}" `); // this will console.log the comment itself
         });
     });
 }
+
+
+
 // obsolete, delete
 function deleteComment(req, res) {
-    Post.findByIdAndDelete(req.user.id, function(err, post) {
+    Post.findByIdAndDelete(req.params.id, function(err, post) {
         res.redirect(`/posts/${post._id}`);
     });
 }
