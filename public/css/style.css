@@ -34,6 +34,13 @@ body { /* shrink to 90% vw */
 
 }
 
+/* POST BOXES (each post container) */
+.fidget-container {
+    text-align: center;
+    border: 1px solid aqua;
+    border-radius: 20px;
+}
+
 /* TWO PANE NEW.EJS LAYOUT */
 .row {
     box-sizing: border-box;
@@ -63,7 +70,6 @@ body { /* shrink to 90% vw */
     
 }
 .post-field {
-
     padding:10px;
     border-radius:10px;
 }

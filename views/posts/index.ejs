@@ -1,8 +1,8 @@
 <%- include('../partials/header.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
 
 
-
-<body>
+<br><br>
+<body><!--Add a container to better style posts here, maybe drop the tables-->
     <table>
         <thead>
             <h3>Posts</h3>
@@ -10,15 +10,23 @@
         <tbody>
             <% posts.reverse().forEach(function(post){ %>
               <tr>
-                <td><%= post.title %>
-                    <a href='/posts/<%= post._id %>'>See More!</a>
+                <td>
+                    <div class="fidget-container"><!--Wrap in a button to make it all clickable-->
+                        <%= post.title %>
+                        <br> 
+                        Written by: <%= post.author %>
+                        <br> 
+                        Comment Total: <%= post.comments.length %>
+                        <br>
+                        <a href='/posts/<%= post._id %>'>See More!</a>
+                    </div>
                 </td>
               </tr>
-              
             <% }) %>
         </tbody>
     </table>
-    <p><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></p>
+   <!--Need a to Top button-->
+   <br><br>
 </body>
 
 <%- include('../partials/footer.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
