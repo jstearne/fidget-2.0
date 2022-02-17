@@ -330,6 +330,46 @@ footer {
 }
 
 
+
+
+/* COMMENTS STYLING */
+/* container for entire page on posts/comments.ejs */
+/* (contains original-post, sub-comments-container) */
+#master-comments-container {
+    border: 1px solid aqua;
+    border-radius: 20px;
+    margin: 10%;
+    background-color: aqua;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+
+/* Original post section of comments.ejs */
+#original-post {
+    border: 1px solid darkblue;
+    border-radius: 20px;
+    margin: 5%;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+/* sub-container for comments, ONLY, below original post */
+#sub-comments-container {
+    border: 1px solid darkblue;
+    border-radius: 20px;
+    margin: 5%;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+/* Individual subfidget wrapper */
+#sub-fidgets {
+    border: 1px solid darkblue;
+    border-radius: 20px;
+    margin: 3%;
+    padding: 3%;
+    background-color: aliceblue;
+
+    box-shadow: inset 0px 0px 2px darkblue; 
+}
+
 /* CUSTOM SCROLLBAR: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
 /* width */
 ::-webkit-scrollbar {
