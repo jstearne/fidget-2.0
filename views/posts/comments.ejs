@@ -4,7 +4,7 @@
 <br><br><br><br><br><br><br><br><br><br><br>
 <body>
     <div id="master-comments-container">
-        <!--Original Post section of master-comments-container-->
+    <!--Original Post section of master-comments-container-->
         <div id="original-post"> 
             <h4>Title</h4>
                 <h3><%= post.title %></h3>                  
@@ -16,33 +16,24 @@
                 <%= post.content %>
                 <br><br>
                 <%= post.createdAt %>
-
         </div>
 
-<!--Between Space (edit, delete buttons)-->
-        
-<div class="center">
-    <!--Edit Button-->
-    <button onclick="editPost()" id="edit-button">re-fidget (edit)</button>
-    <!--Delete Button-->
-    <form action='/posts/<%= post._id %>?_method=DELETE' method="POST"> 
-    <button id="delete-button" type="submit">de-fidget (delete)</button>
-    </form>
-    
-   
-    
+    <!--Between Space (edit, delete buttons)-->
+        <div class="center">
+            <!--Edit Button-->
+            <button onclick="editPost()" id="edit-button">re-fidget<br>(edit)</button>
 
-</div>
+            <!--Delete Button-->
+            <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" > 
+                <button id="delete-form" type="submit">de-fidget<br>(delete)</button>
+            </form>
+        </div>
+    <!--Between Space (edit, delete buttons)-->
 
 
-
-
-        <!--Edit button vanishes and reveals an edit field-->
-
-
-        <!-- action="/posts/<%= post._id %>/update?_method=PUT" -->
+    <!--Edit button vanishes and reveals an edit field, below-->
         <form id='edit-comment' action="/posts/<%= post._id %>?_method=PUT" method="POST" style="display:none" >
-            <h4>Edit this Post</h4>
+            <h4>re-fidget this</h4>
             <input type="text" id = "title" name="title" required value="Title">
             <input type="text" id = "content" name="content" required value="Content">
             <button type ="submit">Submit Changes</button>
@@ -60,9 +51,8 @@
         </div>
 
 
-        <!--Comments section of master-comments-container-->
+    <!--Comments section of master-comments-container-->
         <div id="sub-comments-container">
-
                 <!--If there are comments already, then...-->
             <% if (post.comments.length) { %>
                 <h3>subfidgets</h3>
