@@ -1,10 +1,10 @@
 <%- include('../partials/header.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
+<!--SEE ALL FIDGETS PAGE-->
 
-
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 <body>
       
-    <h3>Posts</h3>
+    <h3>- fidgets -</h3>
         <div class="fidget-field"> 
             <% posts.reverse().forEach(function(post){ %>
                     <div class="fidget-container"><!--Wrap in a button to make it all clickable-->
@@ -16,26 +16,12 @@
                     </div>
             <% }) %>
         </div>
-   <!--Need a to Top button-->
-   <br><br>
+    <button class="top-button" onclick="toTop()">To Top</button>
 
-<!--TEST-->
-<a href='/'>Home</a><br><a href='/posts/new'>New Posts</a>
-<br><br>
-
-
+<br>
 </body>
+<br>
+<br>
 
-
-
-
-
-
-
-
-<!--TEST-->
-<!--TEST-->
-<a href='/'>See Posts!</a>
-<br><br>
 
 <%- include('../partials/footer.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
