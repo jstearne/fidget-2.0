@@ -45,7 +45,8 @@
         <div id="post-update-field"> 
             <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
                 <h3>add subfidget</h3>
-                <input type="text" class="add-comment-input" placeholder="Subfidget here" required="required">
+                <input type="text" name="author" class="add-comment-input" placeholder="Anon here" required="required">
+                <input type="text" name="content" class="add-comment-input" placeholder="Subfidget here" required="required">
                 <div class="center">
                 <input type='submit' class="add-comment-submit" value='Send Fidget!'>
                 </div>
@@ -60,9 +61,10 @@
                 <h3>subfidgets</h3>
                     <% post.comments.forEach(function(c) { %>
                     <div id="sub-fidgets"> 
-                        > <%= c.content %><br>
+                        > <%= c.content %><br><br>
                         <div id="mobile-hide"> 
-                            <smalL>at: <%= c.createdAt %></smalL>
+                            <small>by: <%= c.author %><br>
+                            at: <%= c.createdAt %></small>
                         </div>
                     </div>
                         <% }); %>
