@@ -20,42 +20,45 @@
         </div>
 
 <!--Between Space (edit, delete buttons)-->
-
-
-    <!-- Javascript/HTML for hiding edit button, revealing edit menu -->
-    <script>
-        function editPost() {
-            const editWindow = document.getElementById("edit-comment");
-            const editButton = document.getElementById("edit-button");
-            editWindow.style.display = "block"; 
-            editButton.style.display = "none";
-        };
-    </script>
-
-        <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-post"> 
-            <br><button type="submit">Delete Post</button>
-        </form>
-        <br>
-        <button onclick="editPost()" id="edit-button">Edit this post</button>
-        <br><br>
-<!-- action="/posts/<%= post._id %>/update?_method=PUT" -->
-<form id='edit-comment' action="/posts/<%= post._id %>?_method=PUT" method="POST" style="display:none" >
-    <h4>Edit this Post</h4>
-    <input type="text" id = "title" name="title" required value="Title">
-    <input type="text" id = "content" name="content" required value="Content">
-    <button type ="submit">Submit Changes</button>
- </form>
-
-    
-    <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
-        <h4>Leave a comment!</h4>
-        <textarea name='content'></textarea>
-        <div class="center">
-        <input type='submit' value='Send Fidget!'>
-        </div>
+        
+<div class="center">
+    <!--Edit Button-->
+    <button onclick="editPost()" id="edit-button">re-fidget (edit)</button>
+    <!--Delete Button-->
+    <form action='/posts/<%= post._id %>?_method=DELETE' method="POST"> 
+    <button id="delete-button" type="submit">de-fidget (delete)</button>
     </form>
+    
+   
+    
 
-<!--Between Space (edit, delete buttons)-->
+</div>
+
+
+
+
+        <!--Edit button vanishes and reveals an edit field-->
+
+
+        <!-- action="/posts/<%= post._id %>/update?_method=PUT" -->
+        <form id='edit-comment' action="/posts/<%= post._id %>?_method=PUT" method="POST" style="display:none" >
+            <h4>Edit this Post</h4>
+            <input type="text" id = "title" name="title" required value="Title">
+            <input type="text" id = "content" name="content" required value="Content">
+            <button type ="submit">Submit Changes</button>
+        </form>
+
+        <!--Between Space (edit, delete buttons)-->
+        <div id="post-update-field"> 
+            <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
+                <h4>Leave a comment!</h4>
+                <textarea name='content'></textarea>
+                <div class="center">
+                <input type='submit' value='Send Fidget!'>
+                </div>
+            </form>
+        </div>
+
 
         <!--Comments section of master-comments-container-->
         <div id="sub-comments-container">
