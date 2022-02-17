@@ -1,50 +1,27 @@
 <%- include('../partials/header.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
+<!--SEE ALL FIDGETS PAGE-->
 
-
-<br><br>
-<body><!--Add a container to better style posts here, maybe drop the tables-->
-    <table>
-        <thead>
-            <h3>Posts</h3>
-        </thead>
-        <tbody>
+<br><br><br><br><br><br><br><br><br><br><br>
+<body>
+      
+    <h3>- fidgets -</h3>
+        <div class="fidget-field"> 
             <% posts.reverse().forEach(function(post){ %>
-              <tr>
-                <td>
                     <div class="fidget-container"><!--Wrap in a button to make it all clickable-->
-                        <%= post.title %>
-                        <br> 
-                        Written by: <%= post.author %>
-                        <br> 
-                        Comment Total: <%= post.comments.length %>
+                        <h4> <%= post.title %> </h4>
+                        <p>-<%= post.author %>, total fidgets: <%= post.comments.length %>
+                        <br><br>
+                        <a href='/posts/<%= post._id %>'>read and comment</a></p>
                         <br>
-                        <a href='/posts/<%= post._id %>'>See More!</a>
                     </div>
-                </td>
-              </tr>
             <% }) %>
-        </tbody>
-    </table>
-   <!--Need a to Top button-->
-   <br><br>
+        </div>
+    <button class="top-button" onclick="toTop()">To Top</button>
 
-<!--TEST-->
-<a href='/'>Home</a><br><a href='/posts/new'>New Posts</a>
-<br><br>
-
-
+<br>
 </body>
+<br>
+<br>
 
-
-
-
-
-
-
-
-<!--TEST-->
-<!--TEST-->
-<a href='/'>See Posts!</a>
-<br><br>
 
 <%- include('../partials/footer.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->

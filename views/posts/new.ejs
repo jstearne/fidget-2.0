@@ -1,11 +1,12 @@
 <%- include('../partials/header.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
+<!--ADD NEW FIDGET PAGE-->
 
-   <br>
-   <br>
+<br><br><br><br><br><br><br><br><br><br><br>
+<body>
     <div class="row">
         <!--Left column start-->
         <div class="column-60">
-            <h3>Add New Fidget</h3>
+            <h3>- add fidget -</h3>
             <form id="new-form" action="/posts" method="POST">
                 <div class="post-form-container">
               
@@ -17,7 +18,7 @@
 
                     <div class="submit-button-container">
                         <div class="center">
-                            <input type="submit" value="Post to Fidget!">
+                            <input class="post-fidget-button" type="submit" value="Post to Fidget!">
                             <button><a href="/posts">Cancel</a></button>
                         </div>  
                     </div>
@@ -27,12 +28,12 @@
 
         <!--Right column start-->
         <div class="column-30">
-            <h3>Recent Fidgets</h3>
+            <h3>recent fidgets</h3>
             <table>
                 <tbody class="postbox">
                     <% posts.reverse().forEach(function (post) { %>
                       <tr>
-                        <div class="fidget-container">
+                        <div class="fidget-container-new">
                             f:<%= post.title %>
                             <br> 
                             #:<%= post.comments.length %>
@@ -45,16 +46,9 @@
             </table>
         </div>
     </div>
-    
-    
- <!--TEST-->
-<a href='/posts'>See Posts!</a><br><a href='/'>Home</a>
-<br><br>
-
-
 
 </body>
-</html>
+
 
 
 <%- include('../partials/footer.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->

@@ -18,6 +18,11 @@ h2 { /* subtitle font */
 h3 {
     text-align: center;
     font-family: 'Shizuru', cursive;
+    font-size: xx-large;
+}
+h4 {
+    font-family: 'Khula', sans-serif;
+    margin-bottom: 0vh;
 }
 p {
     font-family: Arial, Helvetica, sans-serif;
@@ -25,6 +30,15 @@ p {
 body { /* shrink to 90% vw */
     margin-left: 5%;
     margin-right: 5%;
+    min-width: 280px;
+    
+    /* polka dots */
+    background-image: radial-gradient(lightblue 10%, transparent 47%),
+    radial-gradient(aqua 10%, transparent 37%);
+    background-color: aliceblue;
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
+    /* Thanks: https://dev.to/clairecodes/how-to-create-a-polka-dot-background-with-css-23m0 */
 }
 .postbox {
     color: darkblue;
@@ -34,23 +48,57 @@ body { /* shrink to 90% vw */
 
 }
 
-/* POST BOXES (each post container) */
-.fidget-container {
-    text-align: center;
+/* UNRESOLVED RARE BUG: can't get master-nav to align at less than 350px */
+
+/* HEADER/NAVBAR */
+/* master-nav (greater navbar) always on top */
+.master-nav { /* HEADER ALWAYS ON TOP */
+    position: sticky; 
+    position: fixed; 
+    top: 0px;
+    min-width: 280px;
+    width: 80%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+/* HEADER HOVER 1vh from top of screen and bottom of HEADER */
+.top-space, .bottom-space {
+    height: 1vh;
+    /* see header.ejs */
+}
+
+
+/* ALL FIDGET STYLING */
+/* contains all fidget elements on posts/index.ejs */
+.fidget-field {
     border: 1px solid aqua;
     border-radius: 20px;
+    margin: 10%;
+    background-color: aqua;
+    box-shadow: 0px 0px 2px darkblue; 
 }
-/* POST BOXES (on new.ejs) */
+
+/* posts/index.ejs FIDGET ELEMENT */
+.fidget-container {
+    text-align: center;
+    border: 1px solid darkblue;
+    border-radius: 20px;
+    margin: 5%;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+
+/* NEW FIDGET STYLING */
+/* posts/new.ejs FIDGET ELEMENT */
 .fidget-container-new {
     text-align: center;
     border: 1px solid aqua;
     border-radius: 20px;
 }
-
 /* TWO PANE NEW.EJS LAYOUT */
 .row {
     box-sizing: border-box;
-
   }
 .column-60 {
     width: 60%;
@@ -68,39 +116,91 @@ body { /* shrink to 90% vw */
 * {
     box-sizing: border-box;
 }
+
+/* new post entry form */
 .post-form-container {
     background-color: aqua;
     box-shadow:0 0 15px 4px rgba(0,0,0,1);
     width: 90%;
-    padding: 20px;
-    
+
+
+    border: 1px solid darkblue;
+    border-radius: 20px;
+    margin: 5%;
+
+
+    box-shadow: 0px 0px 2px darkblue; 
 }
 .post-field {
     padding:10px;
     border-radius:10px;
+    
 }
+/* individual text fields (content is text area */
 input {
     width: 90%;
-    padding:10px;
-    margin-bottom: 5px;
-    border-radius:10px;
+    padding: 2%;
+    height: 2em;
+    border-radius: 2px;
+    text-align: left;
+    border: 1px solid darkblue;
+    margin: 5%;
+    margin-bottom: 2%;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+/* content text field */
+textarea {
+    height: 6em;
+    width: 90%;
+    
+    text-align: left;
+    border: 1px solid darkblue;
+    border-radius: 2px;
+    margin: 5%;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
 }
 .submit-button-container {
     background-color: black;
     padding: 20px;
+    text-align: center;
+    border: 1px solid darkblue;
+    border-radius: 20px;
+    margin: 3%;
+    margin-top: 0%;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
 }
-textarea {
-    height: 50%;
-    width: 90%;
-    padding:10px;
-    border-radius:10px;
+.post-fidget-button {
+    background-color: aqua;
+    color: darkblue;
+    width: 80%;
+    text-align: center;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+.post-fidget-button:hover {
+    background-color: darkblue;
+    color: white;
+    width: 80%;
+    text-align: center;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px darkblue; 
 }
 
+
+
+
 /* NAVBAR CONTAINER */
-.nav-bar {
+.nav-bar { /* contains three nav buttons */
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1vh;
 }
 
 /* NAV "BUTTONS" */
@@ -111,9 +211,9 @@ textarea {
     width: 30%;
     text-align: center;
     border: 0;
-    border-radius: 15px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px darkblue; 
 }
-
 /* Styling the Link in the "button" */
 .link-buffer a:active {
     color: white;
@@ -134,57 +234,82 @@ textarea {
 .link-buffer a:hover {
     text-decoration: underline;
 }
-
-
 /* Main title box */
-.title-box {
+.title-box { /* only includes fidget title and subtitle */
     text-align: center;
+    background-color: aliceblue;
     border: 1px solid aqua;
-    border-radius: 20px;
-    padding-top: -5vh;
-
+    border-radius: 2px; /* to allow polka dot effect underneath */
+    box-shadow: 0px 0px 2px darkblue; 
 }
 
 
+/* TO TOP BUTTON (at bottom of posts/index.ejs */
+.top-button {
+    background-color: aqua;
+    color: darkblue;
+    padding: 1em;
+    width: 30%;
+    text-align: center;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+.top-button:hover {
+    background-color: darkblue;
+    color: white;
+    padding: 1em;
+    width: 30%;
+    text-align: center;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+
+
+/* FOOTER */
 /* always at bottom */
 footer {
     position: fixed;
     bottom: 0;
+    border-radius: 2px;
     width: 90%; /* whole app only takes up 90% of screen, 5% off each side */
     text-align: center;
     color: darkblue;
-    background: linear-gradient(135deg, white 20%, cyan, white 80%);
-
+    background: linear-gradient(135deg, white 30%, cyan, white 70%);
+    box-shadow: 0px 0px 2px darkblue; 
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* ABOUT FIDGET */
 .about-fidget {
     text-align: center;
 }
-
 .about-fidget, p {
     text-align: center;
 }
-/* CUSTOM SCROLLBAR */
 
+
+/* CUSTOM SCROLLBAR: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
 /* width */
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
+    box-shadow: 0px 0px 1px lightblue; 
 }
-  
-  /* Track */
+  /* Track background (whitespace)*/
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px darkblue; 
-    border-radius: 10px;
+    box-shadow: inset 1px 1px 7px lightblue; 
+    border-radius: 0px;
 }
-   
   /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: blue; 
-    border-radius: 10px;
+    background: aqua; 
+    box-shadow: inset 0 0 5px darkblue; 
+    border-radius: 1px;
 }
-  
   /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: darkblue; 
+    cursor: grabbing;
 }
