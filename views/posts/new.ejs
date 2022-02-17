@@ -6,7 +6,7 @@
     <div class="row">
         <!--Left column start-->
         <div class="column-60">
-            <h3>- add fidget -</h3>
+            <h3>add new</h3>
             <form id="new-form" action="/posts" method="POST">
                 <div class="post-form-container">
               
@@ -28,23 +28,17 @@
 
         <!--Right column start-->
         <div class="column-30">
-            <h3>recent fidgets</h3>
-            <table>
-                <tbody class="postbox">
-                    <% posts.reverse().forEach(function (post) { %>
-                      <tr>
-                        <div class="fidget-container-new">
-                            <p><strong> <%= post.title %></strong> <br>
-                            <%= post.comments.length %> fidgets so far</p>
-            
-                            <a href='/posts/<%= post._id %>'>add yours!</a>
+            <h3>f</h3>
+                <% posts.reverse().forEach(function(post){ %>
+                        <div class="fidget-container-new"><!--Wrap in a button to make it all clickable-->
+                            <h4> <%= post.title %> </h4>
+                            <p>-<%= post.author %>, total fidgets: <%= post.comments.length %>
+                            <br><br>
+                            <a href='/posts/<%= post._id %>'>read and comment</a></p>
                             <br>
                         </div>
-                      </tr>
-                    <% }) %>
-                </tbody>
-            </table><br><br><br>
-        </div>
+                <% }) %>
+        </div><!--END RIGHT COLUMN-->
     </div>
     <br>
     <br>

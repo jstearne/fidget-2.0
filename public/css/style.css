@@ -40,15 +40,14 @@ body { /* shrink to 90% vw */
     background-size: 100px 100px;
     /* Thanks: https://dev.to/clairecodes/how-to-create-a-polka-dot-background-with-css-23m0 */
 }
-.postbox {
-    color: darkblue;
-}
+/* fuzz effect on the about section text */
 #about-blur {
     color: darkblue;
-    text-shadow: 0px 1px 1px darkblue; 
+    text-shadow: 0px 1px 3px darkblue; 
+    font-size: x-large;
+    min-width:325px;
 }
 
-/* UNRESOLVED RARE BUG: can't get master-nav to align at less than 350px */
 
 /* HEADER/NAVBAR */
 /* master-nav (greater navbar) always on top */
@@ -88,6 +87,10 @@ body { /* shrink to 90% vw */
     background-color: aliceblue;
     box-shadow: 0px 0px 2px darkblue; 
 }
+.post-field {
+    padding:10px;
+    border-radius:10px;
+}
 
 /* NEW FIDGET STYLING */
 /* posts/new.ejs FIDGET ELEMENT */
@@ -104,7 +107,7 @@ body { /* shrink to 90% vw */
 /* TWO PANE NEW.EJS LAYOUT */
 .row {
     box-sizing: border-box;
-  }
+}
 .column-60 {
     width: 60%;
     float: left;
@@ -113,15 +116,10 @@ body { /* shrink to 90% vw */
     width: 40%;
     float: right;
 }
-
-
-
-
 /* FORM BOXES */
-* {
+* { /* keeps everything aligned evenly */
     box-sizing: border-box;
 }
-
 /* new post entry form */
 .post-form-container {
     background-color: aqua;
@@ -132,12 +130,7 @@ body { /* shrink to 90% vw */
     margin: 5%;
     box-shadow: 0px 0px 2px darkblue; 
 }
-.post-field {
-    padding:10px;
-    border-radius:10px;
-    
-}
-/* individual text fields (content is text area */
+/* individual NEW FIDGET text fields (content is text area) */
 input {
     width: 90%;
     padding: 2%;
