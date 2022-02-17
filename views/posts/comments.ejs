@@ -6,16 +6,17 @@
     <div id="master-comments-container">
     <!--Original Post section of master-comments-container-->
         <div id="original-post"> 
-            <h4>Title</h4>
-                <h3><%= post.title %></h3>                  
+            <p id="post-fonts"> <em>title</em> </p>
+                <h4><%= post.title %></h4>                  
 
-            <h4>Author</h4>
-                <%= post.author %>           
+                <p id="post-fonts"><em>author</em></p>
+                <h4><%= post.author %></h4>        
         
-            <h4>Content</h4>
-                <%= post.content %>
-                <br><br>
-                <%= post.createdAt %>
+                <p id="post-fonts"><em>content</em></p>
+                <h4><%= post.content %></h4>
+                <br>
+                <!--don't display on mobile-->
+                <small id="mobile-hide">at: <%= post.createdAt %></small>
         </div>
 
     <!--Between Space (edit, delete buttons)-->
@@ -73,7 +74,10 @@
             <% } %>
         </div>
     </div>
-    
+<div class="center">
+    <button class="top-button" onclick="toTop()">To Top</button> 
+</div>
+<br><br><br>
 
 <img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" class="fidget-spinner" />
 <br><br><br>

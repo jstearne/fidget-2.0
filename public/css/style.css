@@ -33,9 +33,14 @@ h4 {
     font-family: 'Khula', sans-serif;
     margin-bottom: 0vh;
 }
+#post-fonts {
+    text-align: left;
+    margin-bottom: -3vh;
+}
 p {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 body { /* shrink to 90% vw */
     margin-left: 5%;
     margin-right: 5%;
@@ -359,6 +364,7 @@ footer {
     border: 1px solid darkblue;
     border-radius: 20px;
     margin: 5%;
+    padding: 5%;
     background-color: aliceblue;
     box-shadow: 0px 0px 2px darkblue; 
 }
