@@ -65,7 +65,10 @@
                 <h3>subfidgets</h3>
                     <% post.comments.forEach(function(c) { %>
                     <div id="sub-fidgets"> 
-                        <%= c.content %> <br>
+                        > <%= c.content %><br>
+                        <div id="mobile-hide"> 
+                            <smalL>at: <%= c.createdAt %></smalL>
+                        </div>
                     </div>
                         <% }); %>
                         <br>
@@ -74,7 +77,6 @@
                 <h3>no subfidgets yet</h3>
                 <p>Add a fidget why don't ya!</p>
             <% } %>
-
         </div>
     </div>
     

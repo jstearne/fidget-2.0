@@ -1,5 +1,14 @@
 /* HEADER CARRIES CSS/JS IMPORT */
+
+/* google font import */
 @import url('https://fonts.googleapis.com/css2?family=Khula:wght@800&family=Shizuru&display=swap');
+
+/* hide elements below 650px view-width: date stamp */
+@media only screen and (max-width: 650px) {
+    #mobile-hide {
+        display: none;
+    }
+}
 
 /* FONT SETTINGS */
 h1 { /* title font */
