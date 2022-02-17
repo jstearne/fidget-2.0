@@ -34,21 +34,22 @@
                     <% posts.reverse().forEach(function (post) { %>
                       <tr>
                         <div class="fidget-container-new">
-                            f:<%= post.title %>
-                            <br> 
-                            #:<%= post.comments.length %>
+                            <p><strong> <%= post.title %></strong> <br>
+                            <%= post.comments.length %> fidgets so far</p>
+            
+                            <a href='/posts/<%= post._id %>'>add yours!</a>
                             <br>
-                            <a href='/posts/<%= post._id %>'>See More!</a>
                         </div>
                       </tr>
                     <% }) %>
                 </tbody>
-            </table>
+            </table><br><br><br>
         </div>
     </div>
-
+    <br>
+    <br>
 </body>
-
-
+<br>
+<br>
 
 <%- include('../partials/footer.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
