@@ -148,6 +148,7 @@ input {
 }
 /* content text field */
 textarea {
+    font-family: Arial, Helvetica, sans-serif;
     height: 8em;
     width: 90%;
     text-align: left;
@@ -180,7 +181,7 @@ textarea {
     margin-bottom: 5%;
     text-align: center;
     border: 0;
-    border-radius: 2px;
+    border-radius: 20px;
     border: 1px solid darkblue;
     box-shadow: 0px 0px 2px darkblue; 
     font-family: 'Khula', sans-serif;
@@ -193,27 +194,45 @@ textarea {
     width: 80%;
     text-align: center;
     border: 0;
-    border-radius: 2px;
+    border-radius: 20px;
     box-shadow: 0px 0px 2px darkblue; 
 }
 #cancel-button {
-    width: 40%;
+    width: 60%;
     height: 3em;
+    text-align: center;
     background-color: orange;
-    border-radius: 2px;
+    border-radius: 10px;
+    border: 1px solid darkblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+#cancel-button:hover {
+    width: 60%;
+    height: 3em;
+    text-align: center;
+    background-color: red;
+    border-radius: 10px;
     border: 1px solid darkblue;
     box-shadow: 0px 0px 2px darkblue; 
 }
 #cancel-link {
     text-decoration: none;
     font-family: 'Khula', sans-serif;
+    text-align: center;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 1vw; /* had to shrink clickable space for nav */
+    padding-bottom: 1vw; /* had to shrink clickable space for nav */
 }
 #cancel-link:visited {
     text-decoration: none;
     font-family: 'Khula', sans-serif;
     color: darkblue;
 }
-
+#cancel-link:hover {
+    text-decoration: underline;
+    color: white;
+}
 
 
 
