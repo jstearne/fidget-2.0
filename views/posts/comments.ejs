@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs') %> <!-- NOTE THAT THE DIRECTORY CHANGES -->
 <!--FIDGET DETAIL/COMMENTS PAGE-->
 
-<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 <body>
     <div id="master-comments-container">
     <!--Original Post section of master-comments-container-->
@@ -21,31 +21,32 @@
     <!--Between Space (edit, delete buttons)-->
         <div class="center">
             <!--Edit Button-->
-            <button onclick="editPost()" id="edit-button">re-fidget<br>(edit)</button>
+            <button onclick="editPost()" id="edit-button">RE-fidget</button>
 
             <!--Delete Button-->
             <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" > 
-                <button id="delete-form" type="submit">de-fidget<br>(delete)</button>
+                <button id="delete-form" type="submit">DE-fidget</button>
             </form>
         </div>
-    <!--Between Space (edit, delete buttons)-->
-
 
     <!--Edit button vanishes and reveals an edit field, below-->
         <form id='edit-comment' action="/posts/<%= post._id %>?_method=PUT" method="POST" style="display:none" >
-            <h4>re-fidget this</h4>
-            <input type="text" id = "title" name="title" required value="Title">
-            <input type="text" id = "content" name="content" required value="Content">
-            <button type ="submit">Submit Changes</button>
+            <h3>re-fidget</h3>
+            <input type="text" class="edit-comment-input" placeholder="Re-Anon" required="required">
+            <input type="text" class="edit-comment-input" placeholder="Give your fidget another cool title" required="required">
+            <textarea type="text" id="edit-content-textarea" placeholder="You may Re-Fidget away, here!"></textarea>
+            <button id="edit-submit-button" type ="submit">re-fidget</button>
         </form>
+    <!--Between Space (edit, delete buttons) ENDS-->
 
-        <!--Between Space (edit, delete buttons)-->
+
+    <!--Leave new subfidget-->
         <div id="post-update-field"> 
             <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
-                <h4>Leave a comment!</h4>
-                <textarea name='content'></textarea>
+                <h3>add subfidget</h3>
+                <input type="text" class="add-comment-input" placeholder="Subfidget here" required="required">
                 <div class="center">
-                <input type='submit' value='Send Fidget!'>
+                <input type='submit' class="add-comment-submit" value='Send Fidget!'>
                 </div>
             </form>
         </div>
@@ -74,11 +75,7 @@
     </div>
     
 
-
-       
-
-   <p><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" class="fidget-spinner" /></p>
-    
-
+<img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" class="fidget-spinner" />
+<br><br><br>
 
 <%- include('../partials/footer.ejs') %> 

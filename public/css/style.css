@@ -180,6 +180,10 @@ textarea {
     background-color: aliceblue;
     box-shadow: 0px 0px 2px darkblue; 
 }
+.center-new {
+    justify-content: center;
+    display: block;
+}
 .post-fidget-button {
     width: 80%;
     height: 5em;
@@ -401,12 +405,12 @@ footer {
 }
 #delete-form{
     font-family: 'Khula', sans-serif;
-    background-color: darkblue;
+    background-color: red;
     color: aliceblue;
     padding: 1em;
     width: 20vw;
     text-align: center;
-    border: 1px solid red;
+    border: 1px solid orange;
     border-radius: 10px;
     box-shadow:  0px 1px 2px darkblue; 
     margin-left: 4vw;
@@ -414,6 +418,7 @@ footer {
 #edit-button:hover {
     background-color: orange;
     color: aliceblue;
+    cursor: pointer;
     padding: 1em;
     width: 20vw;
     text-align: center;
@@ -424,6 +429,7 @@ footer {
 }
 #delete-form:hover {
     background-color: red;
+    cursor: pointer;
     color: aliceblue;
     padding: 1em;
     width: 20vw;
@@ -434,10 +440,131 @@ footer {
     margin-left: 4vw;
 }
 /* edit form only appears when called by edit button */
-.edit-fidget-form {
+#edit-comment { /* breaks if I try to change, no idea why */
+    text-align: center;
+    border: 1px solid darkblue;
+    background-color: aliceblue;
+    border-radius: 20px;
+    margin: 5%;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+.edit-comment-input {
+    height: 3em;
+    width: 90%;
+    text-align: left;
+    padding: 2%;
+    border: 1px solid darkblue;
+    border-radius: 2px;
+    margin: 5%;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+#edit-content-textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 8em;
+    width: 90%;
+    text-align: left;
+    padding: 2%;
+    border: 1px solid darkblue;
+    border-radius: 2px;
+    margin: 5%;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+#edit-submit-button {
+    font-family: 'Khula', sans-serif;
+    cursor: pointer;
     background-color: darkblue;
+    color: aliceblue;
+    padding: 1em;
+    width: 25vw;
+    text-align: center;
+    border: 1px solid aqua;
+    border-radius: 10px;
+    box-shadow:  0px 1px 2px darkblue; 
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+#edit-submit-button:hover {
+    font-family: 'Khula', sans-serif;
+    background-color: green;
+    color: aliceblue;
+    padding: 1em;
+    width: 25vw;
+    text-align: center;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    box-shadow: inset 0px 1px 2px yellow; 
+    box-shadow: 0px 1px 2px darkblue; 
 }
 
+/* SUBMIT NEW SUBFIDGET */
+
+
+
+/* New Subfidget Input Field */
+.add-comment-input {
+    height: 3em;
+    width: 90%;
+    text-align: left;
+    padding: 2%;
+    border: 1px solid darkblue;
+    border-radius: 2px;
+    margin: 5%;
+    margin-top: 0vh;
+    margin-bottom: 1vh;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+
+/* New Subfidget Button */
+.add-comment-submit {
+    font-family: 'Khula', sans-serif;
+    background-color: aqua;
+    color: darkblue;
+    padding: 1em;
+    width: 20vw;
+    text-align: center;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    box-shadow:  0px 1px 2px darkblue; 
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+.add-comment-submit:hover {
+    background-color: darkblue;
+    cursor: pointer;
+    color: aliceblue;
+    padding: 1em;
+    width: 20vw;
+    text-align: center;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    box-shadow:  0px 1px 2px darkblue; 
+
+}
+
+/* FIDGET SPINNERS */
+.fidget-spinner:hover {
+    animation: rotation 1s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
 
 
 /* CUSTOM SCROLLBAR: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
