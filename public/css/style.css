@@ -43,9 +43,9 @@ body { /* shrink to 90% vw */
 .postbox {
     color: darkblue;
 }
-.post-link {
-    color: red;
-
+#about-blur {
+    color: darkblue;
+    text-shadow: 0px 1px 1px darkblue; 
 }
 
 /* UNRESOLVED RARE BUG: can't get master-nav to align at less than 350px */
