@@ -132,23 +132,26 @@ body { /* shrink to 90% vw */
 }
 /* individual NEW FIDGET text fields (content is text area) */
 input {
+    height: 3em;
     width: 90%;
-    padding: 2%;
-    height: 2em;
-    border-radius: 2px;
     text-align: left;
+    padding: 2%;
+    
     border: 1px solid darkblue;
+    border-radius: 2px;
+    
     margin: 5%;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
     align-items: center;
     background-color: aliceblue;
     box-shadow: 0px 0px 2px darkblue; 
 }
 /* content text field */
 textarea {
-    height: 6em;
+    height: 8em;
     width: 90%;
     text-align: left;
+    padding: 2%;
     border: 1px solid darkblue;
     border-radius: 2px;
     margin: 5%;
@@ -157,25 +160,31 @@ textarea {
     box-shadow: 0px 0px 2px darkblue; 
 }
 .submit-button-container {
+    width: 90%;
     background-color: black;
-    padding: 5px;
+    padding: 1%;
     text-align: center;
     border: 1px solid darkblue;
     border-radius: 20px;
-    margin: 3%;
+    margin: 5%;
     margin-top: 0%;
     align-items: center;
     background-color: aliceblue;
     box-shadow: 0px 0px 2px darkblue; 
 }
 .post-fidget-button {
+    width: 80%;
+    height: 5em;
     background-color: aqua;
     color: darkblue;
-    width: 80%;
+    margin-bottom: 5%;
     text-align: center;
     border: 0;
     border-radius: 2px;
+    border: 1px solid darkblue;
     box-shadow: 0px 0px 2px darkblue; 
+    font-family: 'Khula', sans-serif;
+    font-size: large;
 }
 .post-fidget-button:hover {
     background-color: darkblue;
@@ -186,6 +195,23 @@ textarea {
     border: 0;
     border-radius: 2px;
     box-shadow: 0px 0px 2px darkblue; 
+}
+#cancel-button {
+    width: 40%;
+    height: 3em;
+    background-color: orange;
+    border-radius: 2px;
+    border: 1px solid darkblue;
+    box-shadow: 0px 0px 2px darkblue; 
+}
+#cancel-link {
+    text-decoration: none;
+    font-family: 'Khula', sans-serif;
+}
+#cancel-link:visited {
+    text-decoration: none;
+    font-family: 'Khula', sans-serif;
+    color: darkblue;
 }
 
 
