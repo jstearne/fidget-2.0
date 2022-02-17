@@ -21,14 +21,14 @@ function index(req, res) {
     });
 }
 
+// req.body = post object, including array of comments
 function create(req, res) {
     Post.findById(req.params.id, function (err, post) {
         post.comments.push(req.body);
         post.save(function (err) {
-            res.redirect(`/posts/${post._id}` );
-            console.log(`Your comment was: "${req.body.content}" `); // this will console.log the comment itself
-        });
-    });
+            res.redirect(`/posts/${post._id}`);
+        })
+    })
 }
 
 
