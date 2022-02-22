@@ -37,6 +37,7 @@ router.get('`/posts/${post._id}`', (req, res) => {
     });
 });
 
+// TEMP REMOVED, update auth 
 // profile page "user"
 // router.get('/user', (req, res) => {
 //     res.render('user', {

@@ -7,12 +7,7 @@ module.exports = {
     updatePost,
 };
 
-// this works fine
-// function index(req, res) {
-//     Post.find({}, function(err, post ) {
-//       res.render(`/posts/${post._id}`, { title: 'Comments', post });
-//     });
-// };
+
 function index(req, res) {
     Post.find({}, function(err, posts) {
         res.render(`/posts/${post._id}`, {
@@ -27,19 +22,15 @@ function create(req, res) {
         post.comments.push(req.body);
         post.save(function (err) {
             res.redirect(`/posts/${post._id}`);
-        })
-    })
+        });
+    });
 }
 
-
-
-// obsolete, delete
 function deleteComment(req, res) {
     Post.findByIdAndDelete(req.params.id, function(err, post) {
         res.redirect(`/posts/${post._id}`);
     });
 }
-
 
 function updatePost(req, res) {
     console.log(req.body._id)
@@ -47,7 +38,5 @@ function updatePost(req, res) {
         if (err) return res.send('404!')
     else {
         res.redirect(`/posts/${post._id}`);
-    }
-
-    })
+    }});
 };
