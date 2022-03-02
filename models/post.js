@@ -10,8 +10,6 @@ const commentSchema = new Schema({
     timestamps: true,
 });
 
-
-
 const postSchema = new Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
