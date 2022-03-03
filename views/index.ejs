@@ -16,9 +16,9 @@
         <br>
 
         <% if (user) { %>
-            <h1> <a href="/logout"> Logout as <%= user.name %> </a> </h1>
+            <h1> <a href="/logout" class="auth-link"> Logout as <%= user.name %> </a> </h1>
         <% } else { %>
-            <h1> <a href="/auth/google">Login with Google</a> </h1>
+            <h1> <a href="/auth/google" class="auth-link">Login with Google</a> </h1>
         <% } %>
 
     </div>

@@ -19,6 +19,7 @@ router.get('posts/', function(req, res) { // get index for '/' route
     res.render('posts/index', { // render posts/index.ejs (naming is confusing), include user/post/comment data
         posts:req.posts,
         comments:req.comments,
+        user:req.user,
     });
 });
 
@@ -27,6 +28,7 @@ router.get('posts/new', function(req, res) { // get index for '/' route
     res.render('posts/new', { // render posts/index.ejs (naming is confusing), include user/post/comment data
         posts:req.posts,
         comments:req.comments,
+        user:req.user,
     });
 });
 
@@ -34,6 +36,7 @@ router.get('posts/new', function(req, res) { // get index for '/' route
 router.get('`/posts/${post._id}`', (req, res) => {
     res.render('comments', {
         comments:req.comments,
+        user:req.user,
     });
 });
 
