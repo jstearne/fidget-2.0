@@ -8,8 +8,8 @@ const indexCtrl = require('../controllers/index');
 // this exports "user" to the '/' index
 router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
+        user:req.user,
         posts:req.posts,
-        comments:req.comments,
     });
 });
 

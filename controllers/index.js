@@ -12,3 +12,4 @@
 //         });
 //     }); // this should render /home with user, req.user data
 // }
+
