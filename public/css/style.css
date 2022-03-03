@@ -44,6 +44,7 @@ p {
 .auth-link {
     color: darkblue;
     text-shadow: 0px 1px 3px lightblue; 
+    font-size: x-large;
 }
 .auth-link:hover {
     color: lightblue;
@@ -91,6 +92,7 @@ body { /* shrink to 90% vw */
     height: 1vh;
     /* see header.ejs */
 }
+
 
 
 /* ALL FIDGET STYLING */
@@ -356,7 +358,15 @@ footer {
 .about-fidget, p {
     text-align: center;
 }
-
+/* OAuth box styling (home google link) */
+.home-fidget-field {
+    border: 1px solid aqua;
+    border-radius: 20px;
+    margin: 30%;
+    margin-top: 5%;
+    background-color: aqua;
+    box-shadow: 0px 0px 2px darkblue; 
+}
 
 
 
