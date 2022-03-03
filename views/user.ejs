@@ -11,57 +11,31 @@
             </h3>
             <!--if AUTH'D-->
 
-            <h1><%= user.name %>'s Fidget Page</h1><!-- Shows logged in user's name -->
-            <h4>Fidgeting since: <%= user.createdAt %></h4> 
+            <h1><%= user.name %>'s Fidgets</h1><!-- Shows logged in user's name -->
+            <div class="center"> <h4>fidgeception: <%= user.createdAt %></h4> </div>
 
             <% if (user.posts.length == 0) { %>
-                <p>Sup? You fidgeting?</p>
+                <h3>Sup...You fidgeting?</h3> <!-- displays if auth but no posts -->
             <% } else { %>
                 <h4>This user has made <%= user.posts.length %> posts!</h4>
 
-                
-
-
-                
-            <% } %>
-
-
-
-
-
-
-
-
-
-                       <% if (user.posts.length) { %>
-                        <h3>- fidgets -</h3>
-                        <div class="fidget-field"> 
-                            <% posts.reverse().forEach(function(post){ %>
-                                    <div class="fidget-container"><!--Wrap in a button to make it all clickable-->
-                                        <h4> <%= post.title %> </h4>
-                                        <p>-<%= post.author %>, total fidgets: <%= post.comments.length %>
-                                        <br><br>
-                                        <a href='/posts/<%= post._id %>'>read and comment</a></p>
-                                        <br>
-                                    </div>
-                            <% }) %>
+                <h3>- fidgets -</h3>
+                <div class="fidget-field"> 
+                    <% posts.reverse().forEach(function(post){ %>
+                        <div class="fidget-container"><!--Wrap in a button to make it all clickable-->
+                            <h4> <%= post.title %> </h4>
+                            <p>-<%= post.author %>, total fidgets: <%= post.comments.length %>
+                            <br><br>
+                            <a href='/posts/<%= post._id %>'>revisit fidget</a></p>
+                            <br>
                         </div>
-                
-                    </tbody>
-                </table>
-           <% } else { %>
-            <h4>No Posts Yet!</h4>
-           <% } %>
-
-
-
-
-
-
-
-
-
-
+                        <br><br>
+                        <div class="center">
+                            <button class="top-button" onclick="toTop()">To Top</button> 
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
 
             <!--if NOT AUTH'D-->
             <% } else { %>
@@ -70,14 +44,6 @@
 
             <!-- All user log-in conditional, otherwise signup! -->
             <!-- Have to get rid of optional name tags in models. Must be mandatory and automatic -->
-
-
-
-            <div class="center">
-                <button class="top-button" onclick="toTop()">To Top</button> 
-            </div>
-            <br><br><br>
-
       
     </body>
 
