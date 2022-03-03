@@ -39,30 +39,30 @@ router.get('`/posts/${post._id}`', (req, res) => {
 
 // TEMP REMOVED, update auth 
 // profile page "user"
-// router.get('/user', (req, res) => {
-//     res.render('user', {
-//         user:req.user,
-//         posts:req.posts,
-//     });
-// });
+router.get('/user', (req, res) => {
+    res.render('user', {
+        user:req.user,
+        posts:req.posts,
+    });
+});
 
-// router.get(
-//     "/auth/google",
-//     passport.authenticate("google", { scope: ["profile", "email"] })
-// );
+router.get(
+    "/auth/google",
+    passport.authenticate("google", { scope: ["profile", "email"] })
+);
 
-// // Google OAuth callback route - not working in deployment
-// router.get( 
-//     "/oauth2callback",
-//     passport.authenticate("google", {
-//       successRedirect: "/", 
-//       failureRedirect: "/",
-//     })
-// );
-// // OAuth logout route - working properly!
-// router.get("/logout", function (req, res) {
-//     req.logout();
-//     res.redirect("/"); 
-// });
+// Google OAuth callback route - not working in deployment
+router.get( 
+    "/oauth2callback",
+    passport.authenticate("google", {
+      successRedirect: "/", 
+      failureRedirect: "/",
+    })
+);
+// OAuth logout route - working properly!
+router.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/"); 
+});
 
 module.exports = router;

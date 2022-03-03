@@ -2,6 +2,7 @@
 <!--UNUSED FOR -->
     </head>
     <body>
+        <br>  <br>  <br>  <br>  <br>  <br>  <br>        <br>  <br>  <br>  <br>  <br>  <br>  <br>
         <nav>
             <ul>
                 <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></a></li>
@@ -24,10 +25,11 @@
 
         <h1>Fidget User Page</h1>
         <h2>What is Fidget?</h2> <!-- Shows logged in user's name -->
-        Member since: <%= user.createdAt %> 
+        Member since: <%= user %> User object has no data because I'm not logged in
 
-        <p>This user has made <%= user.posts.length %> posts! </p>
-        <% if (user.posts.length) { %>
+
+        <% if (user) { %>
+            <p>This user has made <%= user.posts.length %> posts! </p>
             <table>
                 <thead>
                     <tr>
