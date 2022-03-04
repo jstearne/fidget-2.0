@@ -40,6 +40,19 @@ h4 {
 p {
     font-family: Arial, Helvetica, sans-serif;
 }
+/* for google auth button on index/user pages */
+.auth-link {
+    color: darkblue;
+    text-shadow: 0px 1px 3px lightblue; 
+    font-size: x-large;
+}
+.auth-link:hover {
+    color: lightblue;
+    text-shadow: 0px 1px 3px darkblue; 
+}
+.auth-link:active {
+    color: purple;
+}
 
 body { /* shrink to 90% vw */
     margin-left: 5%;
@@ -79,6 +92,7 @@ body { /* shrink to 90% vw */
     height: 1vh;
     /* see header.ejs */
 }
+
 
 
 /* ALL FIDGET STYLING */
@@ -263,7 +277,7 @@ textarea {
     background-color: aqua;
     color: darkblue;
     padding: 1em;
-    width: 30%;
+    width: 22%;
     text-align: center;
     border: 0;
     border-radius: 2px;
@@ -344,7 +358,15 @@ footer {
 .about-fidget, p {
     text-align: center;
 }
-
+/* OAuth box styling (home google link) */
+.home-fidget-field {
+    border: 1px solid aqua;
+    border-radius: 20px;
+    margin: 30%;
+    margin-top: 5%;
+    background-color: aqua;
+    box-shadow: 0px 0px 2px darkblue; 
+}
 
 
 

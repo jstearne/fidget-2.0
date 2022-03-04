@@ -2,53 +2,49 @@
 <!--UNUSED FOR -->
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></a></li>
-                <li>
-                    <% if (user) { %>
-                        <a href="/logout">Log Out</a>
-                        <% } else { %>
-                        <a href="/auth/google">Login with Google</a>
-                        <% } %>
-                </li>
-                <li>
-                    <a href="/posts">Main</a>
-                </li>
-                <li>
-                    <a href="posts/new">Make a Post</a>
-                </li>
-            </ul>
-        </nav>
- 
+        <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
 
-        <h1>Fidget User Page</h1>
-        <h2>What is Fidget?</h2> <!-- Shows logged in user's name -->
-        Member since: <%= user.createdAt %> 
 
-        <p>This user has made <%= user.posts.length %> posts! </p>
-        <% if (user.posts.length) { %>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% user.posts.forEach(function(c) { %>
-                        <tr>
-                            <td><%= c.posts %></td>
-                        </tr>
-                   <% }); %>
-                </tbody>
-            </table>
-       <% } else { %>
+        <% if (user) { %>
+            <!--if AUTH'D-->
+            <h4> <a href="/logout" class="auth-link"> Logout as <%= user.name %> </a> </h4>
 
-        <h4>No Posts Yet!</h4>
-       <% } %>
+            <h3><%= user.name %>'s Fidgets</h3><!-- Shows logged in user's name -->
+            <div class="center"> <h4>fidgeception: <%= user.createdAt %></h4> </div>
+            <% if (user.posts.length == 0) { %>
+                <br><br>
+                <div class="center"> <h4>Sup...You fidgeting?</h4> </div> <!-- displays if auth but no posts -->
+            <% } else { %>
+            <!--if NOT AUTH'D-->
+                <h4>This user has made <%= user.posts.length %> posts!</h4> 
 
+                <h3>- fidgets -</h3>
+                <div class="fidget-field"> 
+                    <% posts.reverse().forEach(function(post){ %>
+                        <div class="fidget-container"><!--Wrap in a button to make it all clickable-->
+                            <h4> <%= post.title %> </h4>
+                            <p>-<%= post.author %>, total fidgets: <%= post.comments.length %>
+                            <br><br>
+                            <a href='/posts/<%= post._id %>'>revisit fidget</a></p>
+                            <br>
+                        </div>
+                        <br><br>
+                        <div class="center">
+                            <button class="top-button" onclick="toTop()">To Top</button> 
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
+
+            <!--if NOT AUTH'D-->
+            <% } else { %>
+            <h1> <a href="/auth/google" class="auth-link">Login with Google</a> </h1>
+            <% } %>
+
+            <!-- All user log-in conditional, otherwise signup! -->
+            <!-- Have to get rid of optional name tags in models. Must be mandatory and automatic -->
       
     </body>
-</html>
+
 
 <%- include('partials/footer.ejs') %>

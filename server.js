@@ -6,9 +6,9 @@ const app = express();
 
 // connect to the database with Mongoose, passport for auth
 require('./config/database'); // db connect
-// require('./config/passport'); // auth
+require('./config/passport'); // auth
 require('./models/post'); // models
-// require('./models/user'); // models
+require('./models/user'); // models
 
 // always in this order for the const variables
 const morgan = require('morgan');
@@ -18,15 +18,13 @@ const methodOverride = require('method-override');
 const favicon = require('serve-favicon');
 const path = require('path');
 
-
 const PORT = process.env.PORT || 3000;
 
 // routes shortcuts
 const indexRouter = require('./routes/index');
 const postRouter = require('./routes/posts');
 const commentRouter = require('./routes/comments');
-// const userRouter = require('./routes/user');
-
+const userRouter = require('./routes/user'); // add
 
 // Configure the app (app.set...ejs)
 app.set('view engine', 'ejs');
@@ -55,11 +53,7 @@ app.use(passport.session());
 app.use('/', indexRouter); // this goes to / "index"
 app.use('/posts', postRouter);
 app.use('/', commentRouter);
-// app.use('/', userRouter);
-// // home route: redundant!
-// app.get('/home', function(req, res) {
-//     res.render('home');
-// });
+app.use('/', userRouter);
 
 
 // Tell the app to listen on port 3000

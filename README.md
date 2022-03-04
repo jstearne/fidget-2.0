@@ -12,3 +12,13 @@ dotenv, ejs, mongoose, morgan, path, serve-favicon, method-override (passport an
 
 # Starting up
 npm start to get started, will connect with Mongo Atlas server. 
+
+
+# 3/3 OAUTH
+Get the Google Oauth working on local
+Get models adjusted to require a name (not input) ref Post model
+Get UX/UI to match new process
+
+Not showing my name when I make new posts. Right now a blank or a weird code string
+
+My "fake" name shows up but not user name

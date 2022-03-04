@@ -8,8 +8,8 @@ const indexCtrl = require('../controllers/index');
 // this exports "user" to the '/' index
 router.get('/', function(req, res) { // get index for '/' route
     res.render('index', {
+        user:req.user,
         posts:req.posts,
-        comments:req.comments,
     });
 });
 
@@ -19,6 +19,7 @@ router.get('posts/', function(req, res) { // get index for '/' route
     res.render('posts/index', { // render posts/index.ejs (naming is confusing), include user/post/comment data
         posts:req.posts,
         comments:req.comments,
+        user:req.user,
     });
 });
 
@@ -27,6 +28,7 @@ router.get('posts/new', function(req, res) { // get index for '/' route
     res.render('posts/new', { // render posts/index.ejs (naming is confusing), include user/post/comment data
         posts:req.posts,
         comments:req.comments,
+        user:req.user,
     });
 });
 
@@ -34,35 +36,36 @@ router.get('posts/new', function(req, res) { // get index for '/' route
 router.get('`/posts/${post._id}`', (req, res) => {
     res.render('comments', {
         comments:req.comments,
+        user:req.user,
     });
 });
 
 // TEMP REMOVED, update auth 
 // profile page "user"
-// router.get('/user', (req, res) => {
-//     res.render('user', {
-//         user:req.user,
-//         posts:req.posts,
-//     });
-// });
+router.get('/user', (req, res) => {
+    res.render('user', {
+        user:req.user,
+        posts:req.posts,
+    });
+});
 
-// router.get(
-//     "/auth/google",
-//     passport.authenticate("google", { scope: ["profile", "email"] })
-// );
+router.get(
+    "/auth/google",
+    passport.authenticate("google", { scope: ["profile", "email"] })
+);
 
-// // Google OAuth callback route - not working in deployment
-// router.get( 
-//     "/oauth2callback",
-//     passport.authenticate("google", {
-//       successRedirect: "/", 
-//       failureRedirect: "/",
-//     })
-// );
-// // OAuth logout route - working properly!
-// router.get("/logout", function (req, res) {
-//     req.logout();
-//     res.redirect("/"); 
-// });
+// Google OAuth callback route - not working in deployment
+router.get( 
+    "/oauth2callback",
+    passport.authenticate("google", {
+      successRedirect: "/", 
+      failureRedirect: "/",
+    })
+);
+// OAuth logout route - working properly!
+router.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/"); 
+});
 
 module.exports = router;

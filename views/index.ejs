@@ -13,8 +13,16 @@
             <br>kind will <strong>not</strong> be tolerated. 
             <br>fidget on righteously! <em>-admin</em>
         </p>
+        <div class="home-fidget-field"> 
+            <% if (user) { %>
+                <h1> <a href="/logout" class="auth-link"> Logout as <%= user.name %> </a> </h1>
+            <% } else { %>
+                <h1> <a href="/auth/google" class="auth-link">Login with Google</a> </h1>
+            <% } %>
+        </div>
     </div>
+
 </body>
 <img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" class="fidget-spinner" />
-<br><br><br>
+<br>
 <%- include('partials/footer.ejs') %>
